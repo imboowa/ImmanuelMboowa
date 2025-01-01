@@ -1,34 +1,38 @@
-# Immanuel Mboowa - Personal Portfolio Website
+# Immanuel Mboowa
 
-Welcome to my personal portfolio website! This project is a showcase of my skills, projects, and interests, created using HTML and CSS. It serves as a hub for visitors to learn more about me, my expertise, and my work.
+Welcome to the personal website of **Immanuel Mboowa**. This repository contains the source code for my portfolio, which showcases my work in the fields of **Computer Science**, **Artificial Intelligence**, **Computational Biology**, **Blender**, and **Chess**.
 
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Sections Overview](#sections-overview)
-- [Future Improvements](#future-improvements)
-- [Contact](#contact)
+## About Me
 
-## About the Project
+I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, and **Animation**. My goal is to create innovative solutions that contribute to these fields.
 
-This website highlights my expertise in computer science, artificial intelligence, computational biology, and more. It also showcases my passion for chess and animation using Blender. The website is designed to provide information about my skills, projects, publications, and hobbies.
+## Projects
 
-## Features
-- **Responsive Design**: Optimized for all devices using meta tags.
-- **Projects Showcase**: Detailed information about my Python, C++, and computational biology projects.
-- **Interactive Navigation**: Easy access to different sections like About, Projects, Publications, and Contact.
-- **External Links**: Direct links to my GitHub, LinkedIn, and Chess.com profiles.
-- **Footer**: Includes copyright information.
+In this repository, you can explore various projects I have worked on, including:
+
+- **Python Projects**: AI applications, bioinformatics tools, and simple utility scripts.
+- **C++ Projects**: Console-based applications, games, and efficiency-driven programs.
+- **Major Projects**: Ongoing work on AI algorithms and bioinformatics applications.
 
 ## Technologies Used
-- **HTML**: For the structure of the website.
-- **CSS**: For styling and layout (via `styles.css`).
-- **JavaScript**: To add interactivity (via `myscript.js`).
 
-## Getting Started
+- **Programming Languages**: Python, C++
+- **Tools**: Git, GitHub, VS Code
+- **Libraries/Frameworks**: TensorFlow, OpenCV, NumPy (for AI and bioinformatics projects)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/imboowa/your-repo-name.git
+## Live Website
+
+You can view my live website hosted on GitHub Pages here:
+
+[https://imboowa.github.io/](https://imboowa.github.io/)
+
+## Contact
+
+You can reach out to me via the following links:
+
+- **Email**: [emboowae@gmail.com](mailto:emboowae@gmail.com)
+- **GitHub**: [https://github.com/imboowa](https://github.com/imboowa)
+- **LinkedIn**: [https://www.linkedin.com/in/immanuel-mboowa-773b65343/](https://www.linkedin.com/in/immanuel-mboowa-773b65343/)
+
+## Copyright
+© 2024 Immanuel Mbooowa. All rights observed.
