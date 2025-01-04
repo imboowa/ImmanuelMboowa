@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Immanuel Mboowa Projects In C++">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Letter Roller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Letter Roller</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section>
+        <h1 class='headings'>Letter Roller</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple console-based program that rolls letters in a string. The program takes a string randomly chosen by the computer and it displays them in a loop designed in the Terminal.
+            </h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>Letter Roller</h1>
+    </section>
+    <section class='codings' id='code'>
+    <pre class='codeParagrapher'>
+<span class='csystem'>#include</span> <span class='system'>&lt;iostream&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;ctime&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;chrono&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;thread&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;unistd.h&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;cmath&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;iomanip&gt;</span>
+<span class='methods'>bool</span> gameOn = <span class='methods'>true</span>;
+<span class='methods'>const</span> <span class='methods'>int</span> width = <span class='nums'>90</span>;
+<span class='methods'>const int</span> height = <span class='nums'>44</span>;
+<span class='methods'>int</span> score, boxesPos = <span class='nums'>30</span>;
+<span class='methods'>int</span> computer1 = rand<span class='cstyle'>()</span> % <span class='nums'>26</span>;
+<span class='methods'>int</span> computer2 = rand<span class='cstyle'>()</span> % <span class='nums'>26</span>;
+<span class='methods'>int</span> computer3 = rand<span class='cstyle'>()</span> % <span class='nums'>26</span>;
+<span class='csystem'>char</span> chances<span class='csystem'>[]</span> = <span class='csystem'>{</span><span class='methods'>'Q'</span>, <span class='methods'>'W'</span>, <span class='methods'>'E'</span>, <span class='methods'>'R'</span>, <span class='methods'>'T'</span>, <span class='methods'>'Y'</span>, <span class='methods'>'U'</span>, <span class='methods'>'I'</span>, <span class='methods'>'O'</span>, <span class='methods'>'P'</span>, <span class='methods'>'A'</span>,
+            <span class='methods'>'S'</span>, <span class='methods'>'D'</span>, <span class='methods'>'F'</span>, <span class='methods'>'G'</span>, <span class='methods'>'H'</span>, <span class='methods'>'J'</span>, <span class='methods'>'K'</span>, <span class='methods'>'L'</span>, <span class='methods'>'Z'</span>, <span class='methods'>'X'</span>, <span class='methods'>'C'</span>, <span class='methods'>'V'</span>,
+            <span class='methods'>'B'</span>, <span class='methods'>'N'</span>, <span class='methods'>'M'</span><span class='csystem'>}</span>;
+<span class='methods'>enum</span> choices <span class='csystem'>{</span><span class='methods'>'Q'</span>, <span class='methods'>'W'</span>, <span class='methods'>'E'</span>, <span class='methods'>'R'</span>, <span class='methods'>'T'</span>, <span class='methods'>'Y'</span>, <span class='methods'>'U'</span>, <span class='methods'>'I'</span>, <span class='methods'>'O'</span>, <span class='methods'>'P'</span>, <span class='methods'>'A'</span>, <span class='methods'>'S'</span>, 
+            <span class='methods'>'D'</span>, <span class='methods'>'F'</span>, <span class='methods'>'G'</span>, <span class='methods'>'H'</span>, <span class='methods'>'J'</span>, <span class='methods'>'K'</span>, <span class='methods'>'L'</span>, <span class='methods'>'Z'</span>, <span class='methods'>'X'</span>, <span class='methods'>'C'</span>, <span class='methods'>'V'</span>, <span class='methods'>'B'</span>,
+            <span class='methods'>'N'</span>, <span class='methods'>'M'</span><span class='csystem'>}</span>;
+
+<span class='cint'>std</span>::<span class='cint'>string</span> player = <span class='strings'>"BOM"</span>;
+<span class='methods'>void</span> drawBoard<span class='cstyle'>()</span>
+<span class='csystem'>{</span>
+  system<span class='csystem'>(</span><span class='strings'>"clear"</span><span class='csystem'>)</span>;
+  <span class='csystem'>for (</span><span class='cint'>int i</span> = <span class='nums'>0</span>; <span class='cint'>i</span> < width <span class='cint'>+</span> <span class='nums'>2</span>; <span class='cint'>i++</span><span class='csystem'>)</span>
+  <span class='csystem'>{</span>
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'*'</span>;
+  <span class='csystem'>}</span>
+  <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='func'>endl</span>;
+  <span class='csystem'>for (</span><span class='cint'>int i</span> = <span class='nums'>0</span>; <span class='cint'>i</span> < height; <span class='cint'>i++</span><span class='csystem'>)</span>
+  <span class='csystem'>{</span>
+    <span class='csystem'>for (</span><span class='cint'>int j</span> = <span class='nums'>0</span>; <span class='cint'>j</span> < width; <span class='cint'>j++</span><span class='csystem'>)</span>
+    <span class='csystem'>{</span>
+      <span class='csystem'>if (</span>j == <span class='nums'>0</span><span class='csystem'>)</span>
+      <span class='csystem'>{</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+      <span class='csystem'>}</span>
+      <span class='csystem'>else if (</span>j == width <span class='cint'>-</span> <span class='nums'>1</span><span class='csystem'>)</span>
+      <span class='csystem'>{</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+      <span class='csystem'>}</span>
+      <span class='csystem'>else if (</span>j == <span class='nums'>15</span> <span class='csystem'>&&</span> i == <span class='nums'>22</span><span class='csystem'>)</span>
+      <span class='csystem'>{</span>
+        srand<span class='csystem'>(</span>time<span class='cstyle'>(</span>NULL<span class='cstyle'>)</span><span class='csystem'>)</span>;
+        computer1 = rand<span class='cstyle'>()</span> % <span class='nums'>26</span>;
+        <span class='csystem'>switch (</span>computer1<span class='csystem'>)</span>
+        <span class='csystem'>{</span>
+        <span class='csystem'>case Q</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>0</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case W</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>1</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case E</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>2</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case R</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>3</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case T</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>4</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Y</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>5</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case U</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>6</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case I</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>7</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case O</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>8</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case P</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>9</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case A</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>10</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+       <span class='csystem'>case S</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>11</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case D</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>12</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case F</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>13</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case G</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>14</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case H</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>15</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case J</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>16</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case K</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>17</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case L</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>18</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Z</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>19</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case X</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>20</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case C</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>21</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case V</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>22</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case B</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>23</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case N</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>24</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case M</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>25</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>default</span>:
+          <span class='csystem'>break</span>;
+        <span class='csystem'>}</span>
+      <span class='csystem'>}</span>
+      <span class='csystem'>else if (</span>j == <span class='nums'>45</span> <span class='csystem'>&&</span> i == <span class='nums'>22</span><span class='csystem'>)</span>
+      <span class='csystem'>{</span>
+        computer2 = rand<span class='csystem'>()</span> % <span class='nums'>26</span>;
+        <span class='csystem'>switch (</span>computer2<span class='csystem'>)</span>
+        <span class='csystem'>{</span>
+        <span class='csystem'>case Q</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>0</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case W</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>1</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case E</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>2</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case R</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>3</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case T</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>4</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Y</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>5</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case U</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>6</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case I</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>7</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case O</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>8</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case P</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>9</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case A</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>10</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+       <span class='csystem'>case S</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>11</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case D</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>12</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case F</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>13</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case G</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>14</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case H</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>15</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case J</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>16</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case K</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>17</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case L</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>18</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Z</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>19</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case X</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>20</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case C</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>21</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case V</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>22</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case B</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>23</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case N</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>24</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case M</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>25</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>default</span>:
+          <span class='csystem'>break</span>;
+        <span class='csystem'>}</span>
+      <span class='csystem'>}</span>
+      <span class='csystem'>else if (</span>j == <span class='nums'>75</span> <span class='csystem'>&&</span> i == <span class='nums'>22</span><span class='csystem'>)</span>
+      <span class='csystem'>{</span>
+        computer3 = rand<span class='cstyle'>()</span> % <span class='nums'>26</span>;
+        <span class='csystem'>switch (</span>computer3<span class='csystem'>)</span>
+        <span class='csystem'>{</span>
+        <span class='csystem'>case Q</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>0</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case W</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>1</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case E</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>2</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case R</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>3</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case T</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>4</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Y</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>5</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case U</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>6</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case I</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>7</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case O</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>8</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case P</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>9</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case A</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>10</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+       <span class='csystem'>case S</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>11</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case D</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>12</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case F</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>13</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case G</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>14</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case H</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>15</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case J</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>16</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case K</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>17</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case L</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>18</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case Z</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>19</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case X</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>20</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case C</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>21</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case V</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>22</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case B</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>23</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case N</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>24</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>case M</span>:
+          <span class='cint'>std</span>::<span class='func'>cout</span> << chances<span class='csystem'>[</span><span class='nums'>25</span><span class='csystem'>]</span>;
+          <span class='csystem'>break</span>;
+        <span class='csystem'>default</span>:
+          <span class='csystem'>break</span>;
+        <span class='csystem'>}</span>
+      <span class='csystem'>}</span>
+      <span class='csystem'>else</span>
+      <span class='csystem'>{</span>
+        <span class='csystem'>for (</span><span class='cint'>int k</span> = boxesPos; <span class='cint'>k</span> < <span class='nums'>90</span>; <span class='cint'>k +=</span> boxesPos<span class='csystem'>)</span>
+        <span class='csystem'>{</span>
+          <span class='csystem'>if (</span>j == k<span class='csystem'>)</span>
+          <span class='csystem'>{</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'|'</span>;
+          <span class='csystem'>}</span>
+        <span class='csystem'>}</span>
+        <span class='csystem'>if (</span>j <span class='cstyle'>!</span>= width || j <span class='cstyle'>!</span>= <span class='nums'>0</span><span class='csystem'>)</span>
+        <span class='csystem'>{</span>
+          <span class='csystem'>std</span>::<span class='func'>cout</span> << <span class='strings'>' '</span>;
+        <span class='csystem'>}</span>
+      <span class='csystem'>}</span>
+    <span class='csystem'>}</span>
+    <span class='csystem'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+  <span class='csystem'>}</span>
+  <span class='csystem'>for (</span><span class='cint'>int i</span> = <span class='nums'>0</span>; <span class='cint'>i</span> < width <span class='cint'>+</span> <span class='nums'>2</span>; <span class='cint'>i++</span><span class='csystem'>)</span>
+  <span class='csystem'>{</span>
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'*'</span>;
+  <span class='csystem'>}</span>
+  <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+<span class='csystem'>}</span>
+<span class='methods'>void</span> input<span class='cstyle'>()</span> 
+<span class='csystem'>{</span>
+  <span class='strings'>// std::cout << "Enter your 3-letter-lucky word; ";</span>
+  <span class='strings'>// std::getline(std::cin >> std::ws,player);</span>
+<span class='csystem'>}</span>
+<span class='methods'>void</span> logic<span class='cstyle'>()</span>
+<span class='csystem'>{</span>
+  <span class='csystem'>if (</span>chances<span class='csystem'>[</span>computer1<span class='csystem'>]</span> == player<span class='csystem'>[</span><span class='nums'>0</span><span class='csystem'>]</span> <span class='csystem'>&&</span> chances<span class='csystem'>[</span>computer2<span class='csystem'>]</span> == player<span class='csystem'>[</span><span class='nums'>1</span><span class='csystem'>]</span> <span class='csystem'>&&
+  </span> chances<span class='csystem'>[</span>computer3<span class='csystem'>]</span> == player<span class='csystem'>[</span><span class='nums'>2</span><span class='csystem'>]</span><span class='csystem'>)</span>
+  <span class='csystem'>{</span>
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"BAM!</span><span class='system'>\n</span><span class='strings'>"</span>;
+    gameOn = <span class='methods'>false</span>;
+  <span class='csystem'>}</span>
+  <span class='csystem'>else</span>
+  <span class='csystem'>{</span>
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"OOPS!</span><span class='system'>\n</span><span class='strings'>"</span>;
+  <span class='csystem'>}</span>
+<span class='csystem'>}</span>
+
+<span class='cint'>int</span> main<span class='cstyle'>()</span>
+<span class='csystem'>{</span>
+  system<span class='csystem'>(</span><span class='strings'>"clear"</span><span class='csystem'>)</span>;
+  input<span class='csystem'>()</span>;
+  <span class='csystem'>while (</span>gameOn<span class='csystem'>)</span>
+  <span class='csystem'>{</span>
+    drawBoard<span class='csystem'>()</span>;
+    logic<span class='csystem'>()</span>;
+    <span class='strings'>// std::this_thread::sleep_for(std::chrono::milliseconds(1000));</span>
+  <span class='csystem'>}</span>
+
+  <span class='csystem'>return</span> <span class='nums'>0</span>;
+<span class='csystem'>}</span>
+</pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

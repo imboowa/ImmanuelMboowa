@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Email">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Email Sender Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Email Sender Program</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#Email">Projects</a></li>
+            <li><a href='#code'>Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section id='Email'>
+        <h1 class='headings'>Email Sender Program</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple python script that sends emails using the smtplib library. The script takes the email address of the recipient, the subject of the email, and the body of the email as input. The script then sends the email to the recipient using the Gmail SMTP server.
+            </h4>
+        </p>
+    </section>
+    <section>
+        <h1 class='headings'>Email Sender Program</h1>
+    </section>
+    <section class='codings' id='code'>
+        <pre class='codeParagraphs'>
+<span class='system'>import</span> smtplib
+
+<span class='comments'># Email variables</span>
+sender_email = <span class='strings'>'sender email'</span>
+receiver_email = <span class='strings'>'receiver email'</span>
+password = <span class='strings'>'an app password'</span>
+
+subject = <span class='strings'>'Subject of the Email'</span>
+body = <span class='strings'>'Body of the Email'</span>
+
+<span class='comments'># Configure email format</span>
+email_format = <span class='strings'>f'</span><span class='system'>{</span>subject<span class='system'>}\n\n{</span>body<span class='system'>}</span><span class='strings'>'</span>
+
+<span class='comments'># Check any exceptions and prepare email to be sent</span>
+<span class='system'>try</span>:
+    <span class='system'>with</span> smtplib.SMTP(<span class='strings'>'smtp.gmail.com'</span>,<span class='nums'>587</span>) <span class='system'>as</span> server:
+        server.starttls()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, email_format)
+        <span class='func'>print</span>(<span class='strings'>'Email Sent'</span>)
+<span class='comments'># If an exception occurs</span>
+<span class='system'>except</span> <span class='func'>Exception</span> <span class='system'>as</span> e:
+    <span class='func'>print</span>(e)
+        </pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p> 
+</footer>
+</html>

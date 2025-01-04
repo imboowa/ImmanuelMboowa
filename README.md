@@ -34,6 +34,5 @@ You can reach out to me via the following links:
 - **GitHub**: [https://github.com/imboowa](https://github.com/imboowa)
 - **LinkedIn**: [https://www.linkedin.com/in/immanuel-mboowa-773b65343/](https://www.linkedin.com/in/immanuel-mboowa-773b65343/)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Copyright
+© 2025 Immanuel Mbooowa. All rights observed.

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Immanuel Mboowa Projects In Python">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Timer Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Timer Program</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section>
+        <h1 class='headings'>Timer Program</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple Python program that acts as a timer. The program takes a user input of the time in seconds and counts down to zero. The program is useful for timing tasks and activities that require a specific duration.<br><br>Below is the program.
+            </h4>
+    </section>
+    <hr>
+    <section id='project'>
+        <h1 class='headings'>Timer Program</h1>
+    </section>
+    <section class="codings" id='code'>
+        <pre class="codeParagrapher">
+<span class='system'>import</span> time
+
+tik_tok = <span class='func'>int</span>(<span class='func'>input</span>(<span class='strings'>"Enter seconds: "</span>)) <span class='comments'># Enter seconds</span>
+
+<span class='system'>for</span> i <span class='system'>in</span> <span class='func'>range</span>(tik_tok,<span class='nums'>0</span>,-<span class='nums'>1</span>): <span class='comments'># Iterate for every second</span>
+    seconds = <span class='func'>int</span>(i) % <span class='nums'>60</span> <span class='comments'># The seconds shouldn't exceed 60 seconds</span>
+    minutes = <span class='func'>int</span>(i / <span class='nums'>60</span>) % <span class='nums'>60</span> <span class='comments'># Minutes don't go above 60 minutes</span>
+    hours = <span class='func'>int</span>(i / <span class='nums'>3600</span>) % <span class='nums'>24</span> <span class='comments'># Hours shouldn't exceed 24 hours</span>
+    days = <span class='func'>int</span>(i / <span class='nums'>86400</span>) % <span class='nums'>7</span> <span class='comments'># Days shouldn't exceed 7 days</span>
+    weeks = <span class='func'>int</span>(i / <span class='nums'>604800</span>)
+    time.sleep(<span class='nums'>1</span>) <span class='comments'># Time will delay by 1 second</span>
+    <span class='func'>print</span>(<span class='strings'>f"W</span><span class='system'>{</span>weeks:<span class='strings'>02</span>} <span class='strings'>D:</span><span class='system'>{</span>days:<span class='strings'>02</span>} <span class='strings'>H:</span><span class='system'>{</span>hours:<span class='strings'>02</span><span class='system'>}</span> <span class='strings'>M:</span><span class='system'>{</span>minutes<span class='strings'>:02</span><span class='system'>}</span> <span class='strings'>S:</span><span class='system'>{</span>seconds:<span class='strings'>02</span><span class='system'>}</span><span class='strings'>"</span></span>)
+        </pre>
+    </section>
+
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

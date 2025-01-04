@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+html {
+    scroll-behavior: smooth;
+}
+header {
+    background: #007BFF;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #007BFF;
+    font-size: 1.8rem;
+}
+
+section p, section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+section ul {
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #007BFF;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Additional Styling for Links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure Contact Section Links Display Properly */
+#contact p {
+    margin: 10px 0;
+}
+
+/* Add Padding for Better Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+.fade-in {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    border: 2px solid white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    transition: transform 0.3 ease-in-out;
+    position: relative;
+    max-height: 600vh;
+    max-width: 1080vh;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 110px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+.fade-in:hover{
+    opacity: 1;
+}
+.content {
+    opacity: 1;
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+    padding-left: 30px;
+    height: 100vh;
+}
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.headings {
+    background-color:greenyellow;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.paragraphs{
+    background-color: rgb(239, 255, 170);
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 20x 5px black;
+}
+.sub-headings {
+    background-color: cyan;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px black;
+}
+.codings {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px black;
+}
+.codeParagraphs {
+    text-align:left;
+    font-size: 20px;
+    font-family: Consolas, monospace, Roboto;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    max-width: 800px;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px black;
+}
+.codeParagrapher {
+    text-align: left;
+    font-size: 19px;
+    font-family: Consolas, monospace, Roboto;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px black;
+}
+
+.comments {
+    color: grey;
+}
+.system {
+    color:chocolate
+}
+.nums {
+    color: aqua
+}
+.strings {
+    color: green;
+}
+.func  {
+    color: rgb(117, 58, 255);
+}
+.methods{
+    color: rgb(23, 100, 255);
+}
+.end{
+    color: rgb(157, 0, 0)
+}
+
+.csystem {
+    color: rgb(204, 0, 255);
+}
+.cpitch {
+    color: papayawhip;
+}
+.cstyle {
+    color: rgb(254, 206, 32);
+}
+.cint {
+    color:aquamarine;  
+}

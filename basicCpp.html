@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic C++ Program">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Basic C++ Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Basic C++ Program</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section>
+        <h1 class='headings'>Basic C++ Program</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple console-based program that yee prints information that shows you a car in stock. The program is a basic introduction to C++ programming and is used to demonstrate the syntax and structure of a C++ program.
+            </h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>Basic C++ Code</h1>
+    </section>
+    <section class='codings' id='code'>
+        <pre class='codeParagrapher'>
+<span class='csystem'>#include</span> <span class='system'>&lt;iostream&gt</span>
+
+<span class='methods'>int</span> <span class='cpitch'>main</span><span class='cstyle'>() {</span>
+    <span class='cint'>std</span>::<span class='cint'>string</span> car = <span class='strings'>"Toyota"</span>;
+    <span class='cint'>std</span>::<span class='cint'>string</span> model = <span class='strings'>"Corolla"</span>;
+    <span class='methods'>int</span> year = <span class='nums'>2020</span>;
+    <span class='methods'>double</span> price = <span class='nums'>20000.00</span>;
+
+    <span class='methods'>bool</span> buyer = <span class='methods'>false</span>;
+    <span class='cint'>std</span>::<span class='cint'>string</span> carChoice = <span class='strings'>" "</span>;
+
+    <span class='csystem'>while</span> <span class='csystem'>(</span>buyer == <span class='methods'>false</span><span class='csystem'>) {</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"Which car do you like? "</span>;
+        <span class='cint'>std</span>::<span class='cstyle'>getline(</span><span class='cint'>std</span>::<span class='cint'>cin</span>, carChoice<span class='cstyle'>)</span>;
+        <span class='csystem'>if</span> <span class='csystem'>(</span>carChoice == car<span class='csystem'>) {</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"You bought a "</span> << car << <span class='strings'>" "</span> << model;
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>" for $"</span> << price << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+            buyer = <span class='methods'>true</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else {</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"Sorry, we don't have</span> << carChoice << <span class='strings'>"."</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+        <span class='csystem'>}</span>
+        buyer = <span class='methods'>true</span>;
+    <span class='csystem'>}</span>
+
+    <span class='csystem'>return</span> <span class='nums'>0</span>;
+<span class='cstyle'>}</span>
+        </pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved.</p>
+</footer>
+</html>

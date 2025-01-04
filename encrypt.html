@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Immanuel Mboowa Encrypt'>
+    <meta name='author' content='Immanuel Mboowa'>
+    <title>Encrypt</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+<header>
+    <h1>Encrypt</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href='index.html'>About</a></li>
+            <li><a href='#project'>Project</a></li>
+            <li><a href='#code'>Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section id='Encrypt'>
+        <h1 class='headings'>Encrypt</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple python script that encrypts text using just the random library. The script takes a text file as input and encrypts the contents using a simple substitution cipher. The script then writes the encrypted text to the file.</h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>Encryption Program</h1>
+    </section>
+    <section class='codings' id='code'>
+        <pre class='codeParagraphs'>
+<span class='system'>import</span> string
+
+<span class='comments'># Char for recognizing the alphabet</span>
+char = string.ascii_letters + string.digits + string.punctuation + <span class='strings'>' '</span>
+<span class='comments'># Key used as a template for encryption</span>
+key = string.punctuation + string.digits + <span class='strings'>" "</span> + string.ascii_letters
+<span class='comments'># Text to be encrypted</span>
+text = <span class='func'>input</span>(<span class='strings'>'Enter the text to be encrypted: '</span>)
+
+<span class='comments'># Encrypt the text function</span>
+<span class='system'>def</span> <span class='methods'>encrypt</span>(text):
+    encrypted_text = <span class='strings'>''</span>
+    <span class='system'>for</span> i <span class='system'>in</span> text:
+        encrypted_text += key[char.find(i)]
+    <span class='system'>return</span> encrypted_text
+<span class='comments'># Call and print the encrypted text</span>
+<span class='func'>print</span>(encrypt(text))
+        </pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+<html>

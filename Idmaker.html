@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects In Python">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>ID Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>ID Maker</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section>
+        <h1 class='headings'>ID Maker</h1>
+        <p>
+            <h4 class='paragraphs'>
+                I have developed an ID Maker application that generates unique IDs for users. The application is built using Python and generates IDs based on user input. The application is useful for generating unique IDs for users in various industries, such as healthcare, finance, and education.<br><br>Below is the project.
+            </h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>ID Maker</h1>
+    </section>
+    <section class='codings' id='code'>
+    <pre class='codeParagraphs'>
+<span class='system'>import</span> random
+<span class='system'>import</span> string
+
+<span class='comments'># Make variables to make the SSN</span>
+id_chars = <span class='func'>list</span>(string.ascii_letters)
+random.shuffle(id_chars)
+last_char = <span class='func'>list</span>(string.digits)
+random.shuffle(last_char)
+
+<span class='comments'># Get user input</span>
+first_name = <span class='func'>input</span>(<span class='strings'>'Enter your first name: '</span>)
+last_name = <span class='func'>input</span>(<span class='strings'>'Enter your last name: '</span>)
+gender = <span class='func'>input</span>(<span class='strings'>'Enter your gender: '</span>)
+height = <span class='func'>float</span>(<span class='func'>input</span>(<span class='strings'>'Enter you height in meters: '</span>))
+id = <span class='func'>str</span>(<span class='strings'>''</span>.join(id_chars)[<span class='nums'>0</span>:<span class='nums'>8</span>]) + <span class='func'>str</span>(<span class='strings'>''</span>.join(last_char)[<span class='nums'>0</span>:<span class='nums'>4</span>])
+
+<span class='comments'># Print the ID</span>
+<span class='func'>print</span>()
+<span class='func'>print</span>(<span class='strings'>'|^^^^^^^^^^^^^^^|'</span>, <span class='end'>end</span>=<span class='strings'>'   '</span>)
+<span class='func'>print</span>(<span class='strings'>f'First Name: </span><span class='system'>{</span>first_name<span class='system'>}</span><span class='strings'>'</span>)
+<span class='func'>print</span>(<span class='strings'>'|  o         o  |'</span>, <span class='end'>end</span>=<span class='strings'>'   '</span>)
+<span class='func'>print</span>(<span class='strings'>f'Last Name: </span><span class='system'>{</span>last_name<span class='system'>}</span><span class='strings'>'</span>)
+<span class='func'>print</span>(<span class='strings'>'|       ^       |'</span>, <span class='end'>end</span>=<span class='strings'>'   '</span>)
+<span class='func'>print</span>(<span class='strings'>f'Gender: </span><span class='system'>{</span>gender<span class='system'>}</span><span class='strings'>'</span>)
+<span class='func'>print</span>(<span class='strings'>'|     -----     |'</span>, <span class='end'>end</span>=<span class='strings'>'   '</span>)
+<span class='func'>print</span>(<span class='strings'>f'Height: </span><span class='system'>{</span>height<span class='system'>}</span><span class='strings'>'</span>)
+<span class='func'>print</span>(<span class='strings'>'|...............|' </span>, <span class='end'>end</span>=<span class='strings'>'   '</span>)
+<span class='func'>print</span>(<span class='strings'>f'SSN: </span><span class='system'>{</span>id<span class='system'>}</span><span class='strings'>'</span>)
+    </pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

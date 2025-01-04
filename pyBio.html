@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects In Computational Biology">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Python Bioinformatics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Python Bioinformatics</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section id='project'>
+        <p>
+            <h1 class='headings'>Python Bioinformatics</h1>
+            <h4 class='paragraphs'>
+                This is a simple program in Python that analyzes DNA strands. The program reads a DNA strand and provides insights into the genetic code of organisms. The program is used to demonstrate the syntax and structure of a Python program.<br><br>This also shows that Bioinformatics can be done too in Python, with the power of vast Python libraries in acknowledgement I am able to make that happen.
+            </h4>
+        </p>
+    </section>
+    <section>
+        <h1 class='headings'>Python Bioinformatics</h1>
+    </section>
+    <section id='code' class='codings'>
+    <pre class='codeParagrapher'>
+<span class='system'>import</span> random
+Nucleotides = [<span class='strings'>"A"</span>,<span class='strings'>"T"</span>,<span class='strings'>"C"</span>,<span class='strings'>"G"</span>]
+
+<span class='system'>def</span> <span class='methods'>validate_code</span>(code):
+    <span class='strings'>"""check if our code is valid to be DNA"""</span>
+
+    correct = []
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        <span class='system'>if</span> i <span class='system'>in</span> Nucleotides:
+            correct.append(i)
+        <span class='system'>else</span>:
+            <span class='system'>continue</span>
+    <span class='system'>return</span> correct
+
+<span class='system'>def</span> <span class='methods'>count_code</span>(code):
+    <span class='strings'>"""count how many times each Nucleotide appears"""</span>
+    DNA = {<span class='strings'>"A"</span>:<span class='nums'>0</span>,<span class='strings'>"T"</span>:<span class='nums'>0</span>,<span class='strings'>"C"</span>:<span class='nums'>0</span>,<span class='strings'>"G"</span>:<span class='nums'>0</span>}
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        <span class='system'>if</span> i <span class='system'>in</span> DNA:
+            DNA[i] += <span class='nums'>1</span>
+        <span class='system'>else</span>:
+            <span class='system'>continue</span>
+    <span class='system'>return</span> DNA
+
+<span class='system'>def</span> <span class='methods'>RNA_generator</span>(code):
+    <span class='strings'>"""generate RNA to be translated"""</span>
+    RNA = {<span class='strings'>"T"</span>: <span class='strings'>"U"</span>}
+    RNA_strand = []
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        <span class='system'>if</span> i == <span class='strings'>"T"</span>:
+            RNA_strand.append(RNA.get(i))
+        <span class='system'>else</span>:
+            RNA_strand.append(i)
+    <span class='system'>return</span> RNA_strand
+
+<span class='system'>def</span> <span class='methods'>reverse</span>(code):
+    DNA = {<span class='strings'>"A"</span>:<span class='strings'>"T"</span>,<span class='strings'>"T"</span>:<span class='strings'>"A"</span>,
+           <span class='strings'>"G"</span>:<span class='strings'>"C"</span>,<span class='strings'>"C"</span>:<span class='strings'>"G"</span>}
+    template = []
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        template.append(DNA.get(i))
+    <span class='system'>return</span> template[::-1]
+
+<span class='system'>def</span> <span class='methods'>GC_percent</span>(code):
+    GC_counter = {<span class='strings'>"G"</span>:<span class='nums'>0</span>,<span class='strings'>"C"</span>:<span class='nums'>0</span>}
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        <span class='system'>if</span> i <span class='system'>in</span> GC_counter.keys():
+            GC_counter[i] += <span class='nums'>1</span>
+        <span class='system'>else</span>:
+            <span class='system'>continue</span>
+    result = (GC_counter.get(<span class='strings'>"G"</span>) + GC_counter.get(<span class='strings'>"C"</span>)) / <span class='func'>len</span>(code) * <span class='nums'>100</span>
+    <span class='system'>return</span> <span class='func'>round</span>(result)
+
+<span class='system'>def</span> <span class='methods'>check_genes</span>(code):
+    codex = <span class='system'>""</span>
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        codex += i
+    <span class='system'>if</span> <span class='strings'>"GTG"</span> <span class='system'>in</span> codex:
+        <span class='func'>print</span>(<span class='strings'>"Valid"</span>)
+    <span class='system'>else</span>:
+        <span class='func'>print</span>(<span class='strings'>"Invalid"</span>)
+
+<span class='system'>def</span> <span class='methods'>DNA_mapping</span>(code):
+    dna = [random.choice(Nucleotides) <span class='system'>for</span> i <span class='system'>in</span> <span class='func'>range</span>(<span class='nums'>50</span>)]
+    error2 = []
+    error = []
+    index = <span class='nums'>0</span>
+    <span class='system'>for</span> i <span class='system'>in</span> code:
+        <span class='system'>if</span> i != dna[index]:
+            error.append(dna[index])
+            error2.append(i)
+        index += <span class='nums'>1</span>
+    <span class='func'>print</span>(<span class='strings'>""</span>.join(dna))
+    <span class='func'>print</span>(<span class='strings'>""</span>.join(code))
+    <span class='func'>print</span>()
+    <span class='func'>print</span>(<span class='strings'>' '</span>.join(error))
+    <span class='func'>print</span>(<span class='strings'>' '</span>.join(error2))
+    <span class='func'>print</span>()
+    percent = <span class='func'>float(</span><span class='func'>len</span>(error2) / <span class='func'>len</span>(code) * <span class='nums'>100</span>)
+    <span class='func'>print</span>(<span class='strings'>f"Mutation: </span><span class='system'>{</span>percent<span class='system'>}</span><span class='strings'>%"</span>)
+
+<span class='system'>def</span> <span class='methods'>GC_content_per_seq</span>(code,segment=<span class='nums'>5</span>):
+    DNA_segment = []
+    <span class='system'>for</span> i <span class='system'>in</span> <span class='func'>range</span>(<span class='nums'>0</span>,<span class='func'>len</span>(code),segment):
+        DNA = code[i:i+segment]
+        DNA_segment.append(GC_percent(DNA))
+    <span class='system'>return</span> DNA_segment
+    </pre>
+    </section>
+           
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>
+
+
+
+

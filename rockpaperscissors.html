@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Rock Paper Scissors Game'>
+    <meta name='author' content='Immanuel Mboowa'>
+    <title>Rock Paper Scissors</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+<header>
+    <h1>Rock Paper Scissors</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href='index.html'>About</a></li>
+            <li><a href='#Rock Paper Scissors'>Project</a></li>
+            <li><a href='#code'>Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section id='Rock Paper Scissors'>
+        <h1 class='headings'>Rock Paper Scissors</h1>
+        <p>
+            <h4 = class='paragraphs'>
+                This is a simple Rock Paper Scissors game developed in Python. The game is played by the user selecting either Rock, Paper, or Scissors, and the computer randomly selects one of the three options. The winner is determined based on the rules of the game. The game is a fun and interactive way to learn Python programming and practice logical thinking.<br><br>Below is the game.
+            </h4>
+        </p>
+    </section>
+    <hr>
+    <section>
+        <h1 class='headings'>Rock Paper Scissors Program</h1>
+    </section>
+    <section class='codings' id='code'>
+    <pre class='codeParagrapher'>
+<span class='system'>import</span> random
+
+<span class='system'>def</span> <span class='methods'>get_computer_choice</span>():
+    choices = [<span class='strings'>"rock"</span>, <span class='strings'>"paper"</span>, <span class='strings'>"scissors"</span>]
+    <span class='system'>return</span> random.choice(choices)
+
+<span class='system'>def</span> <span class='methods'>get_user_choice</span>():
+    user_choice = <span class='func'>input</span>(<span class='strings'>"Enter your choice (rock, paper, scissors): "</span>).lower()
+    <span class='system'>while</span> user_choice <span class='system'>not in</span> [<span class='strings'>"rock"</span>, <span class='strings'>"paper"</span>, <span class='strings'>"scissors"</span>]:
+        <span class='func'>print</span>(<span class='strings'>"Invalid choice. Please try again."</span>)
+        user_choice = <span class='func'>input</span>(<span class='strings'>"Enter your choice: "</span>).lower()
+    <span class='system'>return</span> user_choice
+
+<span class='system'>def</span> <span class='methods'>determine_winner</span>(user, computer):
+    <span class='system'>if</span> user == computer:
+        <span class='system'>return</span> <span class='strings'>"It's a tie!"</span>
+    <span class='system'>elif</span> (user == <span class='strings'>"rock"</span> <span class='system'>and</span> computer == <span class='strings'>"scissors"</span>) <span class='system'>or</span> \
+         (user == <span class='strings'>"scissors"</span> <span class='system'>and</span> computer == <span class='strings'>"paper"</span>) <span class='system'>or</span> \
+         (user == <span class='strings'>"paper"</span> <span class='system'>and</span> computer == <span class='strings'>"rock"</span>):
+        <span class='system'>return</span> <span class='strings'>"You win!"</span>
+    <span class='system'>else</span>:
+        <span class='system'>return</span> <span class='strings'>"You lose!"</span>
+
+<span class='system'>def</span> <span class='methods'>play_game</span>():
+    <span class='func'>print</span>(<span class='strings'>"Welcome to Rock, Paper, Scissors!"</span>)
+    <span class='system'>while True</span>:
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+        <span class='func'>print</span>(<span class='strings'>f"</span><span class='system'>\n</span><span class='strings'>You chose: </span><span class='system'>{</span>user_choice<span class='system'>}</span><span class='strings'>"</span>)
+        <span class='func'>print</span>(<span class='strings'>f"Computer chose: </span><span class='system'>{</span>computer_choice<span class='system'>}</span>")
+        result = determine_winner(user_choice, computer_choice)
+        <span class='func'>print</span>(result)
+        
+        play_again = <span class='func'>input</span>(<span class='strings'>"</span><span class='system'>\n</span><span class='strings'>Do you want to play again? (yes/no): "</span>).lower()
+        <span class='system'>if</span> play_again != <span class='strings'>"yes"</span>:
+            <span class='func'>print</span>(<span class='strings'>"Thanks for playing! Goodbye!"</span>)
+            <span class='system'>break</span>
+
+<span class='comments'># Run the game</span>
+play_game()
+</pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

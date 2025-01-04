@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name='author' author='Immanuel Mboowa'>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+
+<header>
+    <h1>Snake Game</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p> 
+
+    <nav>
+        <ul>
+            <li><a href='index.html'>About</a></li>
+            <li><a href='#project'>Project</a></li>
+            <li><a href='#code'>Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section>
+        <h1 class='headings'>Snake Game</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple console-based Snake game developed in C++. The game is automated moving the letter 'o' around the screen to eat food. The game ends when the snake runs into the letter 'T'. It's not a typical snake game though, but this is how far I can go.<br><Br>The additional libraries except 'iostream' are just my revision that they exist so you cn do without them.
+            </h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>Snake Game Code</h1>
+    </section>
+    <section class='codings' id='code'>
+        <pre class='codeParagrapher'>
+<span class='csystem'>#include</span> <span class='system'>&lt;iostream&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;ctime&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;cmath&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;termios.h&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;unistd.h&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;thread&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;chrono&gt;</span>
+<span class='csystem'>#include</span> <span class='system'>&lt;vector&gt;</span>
+<span class='methods'>bool</span> gameOver = <span class='methods'>false</span>;
+
+<span class='cint'>class</span> <span class='methods'>Game</span><span class='csystem'>{</span>
+    <span class='methods'>char</span> fruit = <span class='csystem'>'*'</span>;
+    <span class='methods'>char</span> head = <span class='csystem'>'O'</span>;
+    <span class='methods'>int</span> width = <span class='nums'>60</span>;
+    <span class='methods'>int</span> height = <span class='nums'>40</span>;
+    <span class='methods'>int</span> headX = width / <span class='nums'>2</span>;
+    <span class='methods'>int</span> headY = height / <span class='nums'>2</span>;
+    <span class='methods'>int</span> fruitX = rand<span class='cstyle'>()</span> % width;
+    <span class='methods'>int</span> fruitY = rand<span class='cstyle'>()</span> % height;
+    <span class='methods'>int</span> nTail = <span class='nums'>0</span>;
+    <span class='methods'>enum</span> direction <span class='methods'>{stop</span> = <span class='methods'>0</span>,<span class='methods'>up</span>,<span class='methods'>down</span>,<span class='methods'>left</span>,<span class='methods'>right</span><span class='csystem'>}</span>;
+    <span class='methods'>direction</span> <span class='cint'>dir</span>;
+<span class='methods'>public</span>:
+    <span class='methods'>void</span> setUp<span class='csystem'>(){</span>
+        srand(time<span class='cstyle'>(</span>NULL<span class='cstyle'>)</span>);  
+        <span class='methods'>system</span><span class='csystem'>(</span><span class='strings'>"clear"</span><span class='csystem'>)</span>;
+        <span class='cint'>dir</span> = <span class='nums'>stop</span>;
+        <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>; <span class='cint'>i</span> < width;<span class='cint'>i++</span><span class='csystem'>){</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"#"</span>;
+        <span class='csystem'>}</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+        <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < height;<span class='cint'>i++</span><span class='csystem'>){</span>
+            <span class='csystem'>for(</span><span class='cint'>int j</span> = <span class='nums'>0</span>;<span class='cint'>j</span> < width;<span class='cint'>j++</span><span class='csystem'>){</span>
+                <span class='csystem'>if(</span>j == 0<span class='csystem'>){</span>
+                    <span class='cint'>std</span>::<span class='cint'>cout</span> << <span class='strings'>'!'</span>;
+                <span class='csystem'>}</span>
+                <span class='csystem'>else if(</span>j == width-<span class='nums'>1</span><span class='csystem'>){</span>
+                    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'!'</span>;
+                <span class='csystem'>}</span>
+                <span class='csystem'>else{</span>
+                    <span class='csystem'>if(</span>headY == i <span class='csystem'>&&</span> headX == j<span class='csystem'>){</span>
+                        <span class='cint'>std</span>::<span class='func'>cout</span> << head;
+                    <span class='csystem'>}</span>
+                    <span class='csystem'>else if(</span>fruitY == i <span class='csystem'>&&</span> fruitX == j<span class='csystem'>){</span>
+                        <span class='cint'>std</span>::<span class='func'>cout</span> << fruit;
+                    <span class='csystem'>}</span>
+                    <span class='csystem'>else{</span>
+                        <span class='csystem'>if(</span>j == <span class='nums'>5</span> <span class='csystem'>&&</span> i == <span class='nums'>5</span><span class='csystem'>){</span>
+                            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+                        <span class='csystem'>}</span>
+                        <span class='csystem'>else if(</span>j == <span class='nums'>55</span> <span class='csystem'>&&</span> i == <span class='nums'>35</span><span class='csystem'>){</span>
+                            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+                        <span class='csystem'>}</span>
+                        <span class='csystem'>else if(</span>j == <span class='nums'>55</span> <span class='csystem'>&&</span> i == <span class='nums'>5</span><span class='csystem'>){</span>
+                            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+                        <span class='csystem'>}</span>
+                        <span class='csystem'>else if(</span>j == <span class='nums'>5</span> <span class='csystem'>&&</span> i == <span class='nums'>35</span><span class='csystem'>){</span>
+                            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>'T'</span>;
+                        <span class='csystem'>}</span>
+                        <span class='csystem'>else{</span>
+                            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>' '</span>;
+                        <span class='csystem'>}</span>
+                    <span class='csystem'>}</span>
+                <span class='csystem'>}</span>
+            <span class='csystem'>}</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < width;<span class='cint'>i++</span><span class='csystem'>){</span>
+            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"#"</span>;
+        <span class='csystem'>}</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+        <span class='csystem'>if(</span>headX == width<span class='csystem'>){</span>
+            headX = <span class='nums'>0</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX == <span class='nums'>5</span> <span class='csystem'>&&</span> headY == <span class='nums'>35</span><span class='csystem'>){</span>
+            gameOver = <span class='methods'>true</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX == <span class='nums'>55</span> <span class='csystem'>&&</span> headY == <span class='nums'>5</span><span class='csystem'>){</span>
+            gameOver = <span class='methods'>true</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX == <span class='nums'>55</span> <span class='csystem'>&&</span> headY == <span class='nums'>35</span><span class='csystem'>){</span>
+            gameOver = <span class='methods'>true</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX == <span class='nums'>5</span> <span class='csystem'>&&</span> headY == <span class='cint'>5</span><span class='csystem'>){</span>
+            gameOver = <span class='methods'>true</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headY == height<span class='csystem'>){</span>
+            headY = <span class='nums'>0</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX < <span class='nums'>0</span><span class='csystem'>){</span>
+            headX = width;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headY < <span class='nums'>0</span><span class='csystem'>){</span>
+            headY = height;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>headX == fruitX <span class='csystem'>&&</span> headY == fruitY<span class='csystem'>){</span>
+            fruitX = rand<span class='cstyle'>()</span> % width;
+            fruitY = rand<span class='cstyle'>()</span> % height;
+            nTail <span class='cint'>++</span>;
+        <span class='csystem'>}</span>
+    <span class='csystem'>}</span>
+    <span class='methods'>void</span> input<span class='csystem'>(){</span>
+        <span class='methods'>int</span> yDir = <span class='csystem'>(</span>fruitY - headY<span class='csystem'>)</span>;
+        <span class='methods'>int</span> xDir = <span class='csystem'>(</span>headX - fruitX<span class='csystem'>)</span>;
+        <span class='csystem'>if(</span>fruitX < headX<span class='csystem'>){</span>
+            dir = <span class='methods'>right</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>fruitX > headX<span class='csystem'>){</span>
+            dir = <span class='methods'>left</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>fruitY < headY<span class='csystem'>){</span>
+            dir = <span class='methods'>up</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if(</span>fruitY > headY<span class='csystem'>){</span>
+            dir = <span class='methods'>down</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if((</span>fruitX == headX<span class='csystem'>)</span> <span class='csystem'>&&</span> <span class='csystem'>(</span>fruitY > headY<span class='csystem'>)){</span>
+            dir = <span class='methods'>up</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if((</span>fruitX == headX<span class='csystem'>) && (</span>fruitY < headY<span class='csystem'>)){</span>
+            dir = <span class='methods'>down</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if((</span>fruitY == headY<span class='csystem'>) && (</span>fruitX > headX<span class='csystem'>)){</span>
+            dir = <span class='methods'>left</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else if((</span>fruitY == headY<span class='csystem'>) && (</span>fruitX < headX<span class='csystem'>)){</span>
+            dir = <span class='methods'>right</span>;
+        <span class='csystem'>}</span>
+        <span class='csystem'>else{</span>
+            dir = <span class='methods'>stop</span>;
+        <span class='csystem'>}</span>
+    <span class='csystem'>}</span>
+    <span class='methods'>void</span> logic<span class='csystem'>(){</span>
+        <span class='csystem'>switch(</span>dir<span class='csystem'>){</span>
+            <span class='csystem'>case</span> <span class='methods'>up</span>: headY<span class='cint'>--</span>;
+                <span class='csystem'>break</span>;
+            <span class='csystem'>case</span> <span class='methods'>down</span>: headY<span class='cint'>++</span>;
+                <span class='csystem'>break</span>;
+            <span class='csystem'>case</span> <span class='methods'>left</span>: headX<span class='cint'>++</span>;
+                <span class='csystem'>break</span>;
+            <span class='csystem'>case</span> <span class='methods'>right</span>: headX<span class='cint'>--</span>;
+                <span class='csystem'>break</span>;
+            <span class='csystem'>default</span>:
+                <span class='csystem'>break</span>;
+        <span class='csystem'>}</span>
+    <span class='csystem'>}</span>
+<span class='csystem'>}</span>;
+<span class='cint'>int</span> main<span class='cstyle'>() {</span>
+    <span class='cint'>Game</span> <span class='methods'>snakeGame</span>;
+    <span class='csystem'>while(</span><span class='cstyle'>!</span>gameOver<span class='csystem'>){</span>
+        <span class='cint'>std</span>::<span class='cint'>this_thread</span>::<span class='cint'>sleep_for</span><span class='csystem'>(</span><span class='cint'>std</span>::<span class='cint'>chrono</span>::<span class='cint'>milliseconds<span class='cstyle'>(</span>15<span class='cstyle'>)</span><span class='csystem'>)</span>;
+        <span class='methods'>snakeGame</span>.setUp<span class='csystem'>()</span>;
+        <span class='methods'>snakeGame</span>.input<span class='csystem'>()</span>;
+        <span class='methods'>snakeGame</span>.logic<span class='csystem'>()</span>;
+    <span class='csystem'>}</span>
+    <span class='csystem'>return</span> <span class='nums'>0</span>;
+<span class='csystem'>}</span>  
+
+        </pre>
+    </section>
+       
+    
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

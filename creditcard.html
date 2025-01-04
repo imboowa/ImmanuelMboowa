@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Immanuel Mboowa Projects In Python'>
+    <meta name='author' content='Immanuel Mboowa'>
+    <title>The Credit Card Validator</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+<header>
+    <h1>The Credit Card Validator</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href='index.html'>About</a></li>
+            <li><a href='#Credit Card Program'>Projects</a></li>
+            <li><a href='#code'>Code</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section id='Credit Card Program'>
+        <h1 class='headings'>Credit Card Validator</h1>
+        <p>
+            <h4 class='paragraphs'>
+                This is a simple python script that validates credit card numbers using the Luhn algorithm. The Luhn algorithm is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers in the United States, and Canadian Social Insurance Numbers.<br><br>Below is the project.
+            </h4>
+        </p>
+    </section>
+    <hr>
+
+    <section id='code'>
+        <p class='headings'>Credit Card Validator</p>
+    </section>
+    <section class='codings'>
+        <pre class='codeParagraphs'>
+<span class="comments"># Credit Card Validator Program</span>
+card_number = <span class="func">input</span>(<span class='strings'>"Enter a card number "</span>)<span class='comments'># Enter a card number</span>
+card_number = card_number.replace(<span class="strings">" "</span>,<span class='strings'>""</span>)<span class='comments'># Remove spaces in number</span>
+card_number = card_number.replace(<span class="strings">"-"</span>,<span class='strings'>""</span>)<span class='comments'># Remove underscores in number</span>
+card_number = card_number[::-<span class='nums'>1</span>]<span class='comments'># Reverse the number</span>
+
+<span class='comments'># Create variables</span>
+sum_of_odd_nums = <span class='nums'>0</span>
+sum_of_even_nums = <span class='nums'>0</span>
+total = <span class='nums'>0</span>
+
+<span class='comments'># Loop through and sum all odd placed numbers</span>
+<span class='system'>for</span> i <span class='system'>in</span> card_number[::<span class='nums'>2</span>]:
+    sum_of_odd_nums += <span class='func'>int</span>(i)
+
+<span class='comments'># Lopp through and double all even placed numbers</span>
+<span class='system'>for</span> i <span class='system'>in</span> card_number[<span class='nums'>1</span>::<span class='nums'>2</span>]:
+    x = <span class='func'>int</span>(i) * <span class='nums'>2</span>
+    <span class='comments'># If x is greater than 9, split it and add them all up</span>
+    <span class='system'>if</span> x >= <span class='nums'>10</span>:
+        sum_of_even_nums += (<span class='nums'>1</span> + (<span class='func'>int</span>(x) % <span class='nums'>10</span>))
+    <span class='comments'># Else it is below 10, sum all up</span>
+    <span class='system'>else</span>:
+        sum_of_even_nums += <span class='func'>int</span>(x)
+
+<span class='comments'># Total all summed even and summed odd variables</span>
+total = sum_of_even_nums + sum_of_odd_nums
+
+<span class='comments'># If total is divisible by 10, then valid</span>
+<span class='system'>if</span> total % <span class='nums'>10</span> == <span class='nums'>0</span>:
+    <span class='func'>print</span>(<span class='strings'>"Valid"</span>)
+<span class='comments'># Else, it is invalid</span>
+<span class='system'>else</span>:
+    <span class='func'>print</span>(<span class='strings'>"Invalid"</span>)
+</pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>

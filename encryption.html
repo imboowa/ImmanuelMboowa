@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Immanuel Mboowa Projects In C++">
+    <meta name="author" content="Immanuel Mboowa">
+    <title>Encryption in C++</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <h1>Encryption in C++</h1>
+    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <section>
+        <h1 class='headings'>Encryption in C++</h1>
+        <p>
+            <h4 class='paragraphs'>
+                I have made encryptions in Python but the ones in C++, are fabulous.<br><br>Below are the projects.
+            </h4>
+        </p>
+    </section>
+    <section id='project'>
+        <h1 class='headings'>
+            Encryption Program
+        </h1>
+    </section>
+    <section class='codings' id='code'>
+        <pre class='codeParagraphs'>
+<span class='csystem'>#include</span> <span class='system'>&lt;iostream&gt;</span>
+
+<span class='cint'>int</span> main<span class='cstyle'>()</span><span class='csystem'> {</span>
+    <span class='cint'>std</span>::<span class='cint'>string</span> name;
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"Enter your name: "</span>;
+    <span class='cint'>std</span>::<span class='cstyle'>getline</span><span class='csystem'>(</span><span class='cint'>std</span>::<span class='cint'>cin</span> >> <span class='cint'>std</span>::<span class='cint'>ws</span>, name<span class='csystem'>)</span>;
+    
+    <span class='strings'>// Displaying the ASCII values of the characters in the name</span>
+    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < name.length<span class='cstyle'>()</span>; <span class='cint'>i++</span><span class='csystem'>){</span>
+        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='system'>static_cast</span>&lt;<span class='end'>int</span>&gt;<span class='csystem'>(</span>name<span class='csystem'>[</span>i<span class='csystem'>])</span>;
+    <span class='csystem'>}</span>
+    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
+    <span class='csystem'>return</span> <span class='nums'>0</span>;
+<span class='csystem'>}</span>
+        </pre>
+    </section>
+</body>
+
+<footer>
+    <p>&copy; 2025 Immanuel Mboowa. All Rights Reserved</p>
+</footer>
+</html>
