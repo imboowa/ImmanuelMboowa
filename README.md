@@ -16,9 +16,8 @@ In this repository, you can explore various projects I have worked on, including
 
 ## Technologies Used
 
-- **Programming Languages**: Python, C++
+- **Programming Languages**: HTML, CSS
 - **Tools**: Git, GitHub, VS Code
-- **Libraries/Frameworks**: TensorFlow, OpenCV, NumPy (for AI and bioinformatics projects)
 
 ## Live Website
 
