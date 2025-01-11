@@ -12,7 +12,7 @@ In this repository, you can explore various projects I have worked on, including
 
 - **Python Projects**: AI applications, bioinformatics tools, and simple utility scripts.
 - **C++ Projects**: Console-based applications, games, and efficiency-driven programs.
-- **Major Projects**: Ongoing work on AI algorithms and bioinformatics applications.
+- **Major Projects**: Ongoing work on AI algorithms, blender scenes, and bioinformatics applications.
 
 ## Technologies Used
 
