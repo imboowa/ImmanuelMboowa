@@ -1,10 +1,10 @@
 # Immanuel Mboowa
 
-Welcome to the personal website of **Immanuel Mboowa**. This repository contains the source code for my portfolio, which showcases my work in the fields of **Computer Science**, **Artificial Intelligence**, **Computational Biology**, **Blender**, and **Chess**.
+Welcome to my personal website. This repository contains the source code for my portfolio, which showcases my work in the fields of **Computer Science**, **Computational Biology**, **Blender**, **Web Development** and **Chess**.
 
 ## About Me
 
-I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, and **Animation**. My goal is to create innovative solutions that contribute to these fields.
+I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, and **3D Animation and Modeling**. My goal is to create innovative solutions that contribute to these fields.
 
 ## Projects
 
@@ -12,12 +12,12 @@ In this repository, you can explore various projects I have worked on, including
 
 - **Python Projects**: AI applications, bioinformatics tools, and simple utility scripts.
 - **C++ Projects**: Console-based applications, games, and efficiency-driven programs.
-- **Major Projects**: Ongoing work on AI algorithms, blender scenes, and bioinformatics applications.
+- **Major Projects**: Blender scenes, and Bioinformatics applications.
 
 ## Technologies Used
 
-- **Programming Languages**: HTML, CSS
-- **Tools**: Git, GitHub, VS Code
+- **Programming Languages**: HTML, CSS, JavaScript
+- **Tools**: GitHub, VS Code
 
 ## Live Website
 
