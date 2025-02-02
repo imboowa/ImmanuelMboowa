@@ -4,7 +4,7 @@ Welcome to my personal website. This repository contains the source code for my 
 
 ## About Me
 
-I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, and **3D Animation and Modeling**. My goal is to create innovative solutions that contribute to these fields.
+I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, **Web Development**, and **3D Animation and Modeling**. My goal is to create innovative solutions that contribute to these fields.
 
 ## Projects
 
@@ -34,4 +34,4 @@ You can reach out to me via the following links:
 - **LinkedIn**: [https://www.linkedin.com/in/immanuel-mboowa-773b65343/](https://www.linkedin.com/in/immanuel-mboowa-773b65343/)
 
 ## Copyright
-© 2025 Immanuel Mbooowa. All rights observed.
+© 2025 Immanuel Mboowa. All rights observed.
