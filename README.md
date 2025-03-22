@@ -16,7 +16,7 @@ In this repository, you can explore various projects I have worked on, including
 
 ## Technologies Used
 
-- **Programming Languages**: HTML, CSS, JavaScript
+- **Programming Languages**: HTML, CSS
 - **Tools**: GitHub, VS Code
 
 ## Live Website
