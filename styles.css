@@ -4,10 +4,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
-}
-html {
-    scroll-behavior: smooth;
+    color: #000000;
+    position: relative;
+    z-index: 1;
 }
 header {
     background: #007BFF;
@@ -15,7 +14,9 @@ header {
     padding: 1rem 0;
     text-align: center;
 }
-
+ul li {
+    cursor: pointer;
+}
 header h1 {
     margin: 0;
     font-size: 2.5rem;
@@ -125,7 +126,6 @@ a:hover {
     border: 2px solid white;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    transition: transform 0.3 ease-in-out;
     position: relative;
     max-height: 600vh;
     max-width: 1080vh;
@@ -167,7 +167,7 @@ a:hover {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    box-shadow: 0 20x 5px black;
+    box-shadow: 1px 1px 3px black;
 }
 .sub-headings {
     background-color: cyan;
@@ -245,4 +245,26 @@ a:hover {
 }
 .cint {
     color:aquamarine;  
+}
+#toggle{
+    background-color: #007BFF;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+    padding-left: 50px;
+}
+#progressBarContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007BFF;
+    z-index: 1000;
+}
+#progressBar{
+    height: 100%;
+    background-color: whitesmoke;
+    transition: background-color 0.1s ease-in;
 }
