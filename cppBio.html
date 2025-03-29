@@ -3,135 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="C++ Bioinformatics">
+    <meta name="description" content="Projects In Computational Biology">
     <meta name="author" content="Immanuel Mboowa">
-    <title>C++ Bioinformatics</title>
+    <title>Computational Biology Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<header>
-    <h1>C++ Bioinformatics</h1>
-    <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender <button id="toggle" title="Change Mode">☀️</button></p>
-    <nav>
-        <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#code">Code</a></li>
-        </ul>
-    </nav>
-</header>
 
-<body>
-    <section>
+<body class="bodies">
+    <header class="stuck">
+        <h1>Computational Biology Projects</h1>
+        <p>Computer Science | Artificial Intelligence | Computational Biology | Chess | Blender <button id="toggle" title="Change Mode">☀️</button></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="#Projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id='Projects'>
         <p>
-            <h1 class='headings'>C++ Bioinformatics</h1>
-            <h4 class='paragraphs'>
-                This is a simple console-based program that analyzes DNA strands in C++. The program reads a DNA strand and provides insights into the genetic code of organisms. The program is used to demonstrate the syntax and structure of a C++ program.<br><br>I am doing this because the C++ programming language is efficient and enhances performance. I aim to apply C++ in computational biology for faster computations and accurate results.
+            <h1>Computational Biology Projects</h1>
+            <h4>
+                I am currently developing a bioinformatics app to innovate the field with my coding expertise. I have developed Python applications such as a DNAGenre in progress and developed quite some python scripts to automate tasks like give analysis on a DNA strand in both Python and C++<br><br>Below are the achievements.
             </h4>
         </p>
     </section>
-    <section id='project'>
-        <h2 class='headings'>C++ Bioinformatics Project</h2>
+    <p>
+        <h1>
+            Projects
+        </h1>
+        <hr>
+    </p>
+    <!-- Computational Biology Projects -->
+    <section id='DNAGenre'>
+        <h2>DNAGenre</h2>
+        <p>
+            This is a bioinformatics app that I am currently developing to innovate the field with my coding expertise. The app will analyze DNA strands and provide insights into the genetic code of organisms. The app will be developed in Python and C++ to enhance performance and accuracy.
+        </p>
+        <p>
+            <a href="DNAGenre.html">View DNAGenre Progress</a>
+        </p>
     </section>
-    <section id='code' class='codings'>
-        <pre class='codeParagrapher'>
-<span class='csystem'>#include</span> <span class='system'>&lt;iostream&gt;</span>
-<span class='csystem'>#include</span> <span class='system'>&lt;ctime&gt;</span>
-
-<span class='csystem'>char</span> Nucleotides<span class='csystem'>[]</span> = <span class='csystem'>{</span><span class='system'>'A'</span>,<span class='system'>'C'</span>,<span class='system'>'G'</span>,<span class='system'>'T'</span><span class='csystem'>}</span>;
-<span class='cint'>std</span>::<span class='cint'>string</span> DNA = <span class='strings'>""</span>;
-<span class='methods'>void</span> makeDNA<span class='csystem'>(){</span>
-    srand<span class='csystem'>(</span>time<span class='cstyle'>(</span>NULL<span class='cstyle'>)</span><span class='csystem'>)</span>;
-    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < <span class='nums'>50</span>;<span class='cint'>i++</span><span class='csystem'>){</span>
-        <span class='methods'>int</span> randDNA = rand<span class='cstyle'>()</span> % <span class='nums'>4</span>;
-        DNA += Nucleotides<span class='csystem'>[</span>randDNA<span class='csystem'>]</span>;
-    <span class='csystem'>}</span>
-<span class='csystem'>}</span>
-<span class='methods'>void</span> makeRNA<span class='csystem'>(){</span>
-    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < <span class='nums'>50</span>;<span class='cint'>i++</span><span class='csystem'>){</span>
-        <span class='csystem'>if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'T'</span><span class='csystem'>){</span>
-            DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> = <span class='strings'>'U'</span>;
-        <span class='csystem'>}</span>
-    <span class='csystem'>}</span>
-<span class='csystem'>}</span>
-<span class='methods'>void</span> countDNA<span class='csystem'>(){</span>
-    <span class='methods'>int</span> aCount = <span class='nums'>0</span>;
-    <span class='methods'>int</span> tCount = <span class='nums'>0</span>;
-    <span class='methods'>int</span> gCount = <span class='nums'>0</span>;
-    <span class='methods'>int</span> cCount = <span class='nums'>0</span>;
-    <span class='csystem'>for(</span><span class='methods'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < <span class='nums'>50</span>;<span class='cint'>i++</span><span class='csystem'>){</span>
-        <span class='csystem'>if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'U'</span><span class='csystem'>){</span>
-            tCount += <span class='nums'>1</span>;
-        <span class='csystem'>}</span>
-        <span class='csystem'>else if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'G'</span><span class='csystem'>){</span>
-            gCount += <span class='nums'>1</span>;
-        <span class='csystem'>}</span>
-        <span class='csystem'>else if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'A'</span><span class='csystem'>){</span>
-            aCount += <span class='nums'>1</span>;
-        <span class='csystem'>}</span>
-        <span class='csystem'>else if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'C'</span><span class='csystem'>){</span>
-            cCount += <span class='nums'>1</span>;
-        <span class='csystem'>}</span>
-    <span class='csystem'>}</span>
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"{A: "</span> << aCount << <span class='strings'>", T: "</span> << tCount << <span class='strings'>", G: "
-                    </span> << gCount << <span class='strings'>", C: "</span> << cCount << <span class='csystem'>"}"</span>;
-<span class='csystem'>}</span>
-<span class='csystem'>double</span> GCpercent<span class='csystem'>(</span><span class='cint'>std</span>::<span class='cint'>string</span> <span class='cstyle'>&</span>DNA,<span class='cint'>int</span> size<span class='csystem'>){</span>
-    <span class='methods'>int</span> content = <span class='nums'>0</span>;
-    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < size;<span class='cint'>i++</span><span class='csystem'>){</span>
-        <span class='csystem'>if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'G'</span> || DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'C'</span><span class='csystem'>){</span>
-            content += <span class='nums'>1</span>;
-        <span class='csystem'>}</span>
-    <span class='csystem'>}</span>
-    <span class='methods'>double</span> results = <span class='csystem'>(</span>content / <span class='cstyle'>(</span>double<span class='cstyle'>)</span> size<span class='csystem'>)</span> * <span class='nums'>100.0</span>;
-    <span class='csystem'>return</span> results;
-<span class='csystem'>}</span>
-<span class='csystem'>void</span> mutations<span class='csystem'>(</span><span class='cint'>std</span>::<span class='cint'>string</span> <span class='cstyle'>&</span>DNA,<span class='cint'>int</span> size<span class='csystem'>){</span>
-    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < size;<span class='cint'>i++</span><span class='csystem'>){</span>
-        <span class='csystem'>if(</span>DNA<span class='csystem'>[</span>i<span class='csystem'>]</span> == <span class='strings'>'G'</span> <span class='csystem'>&&</span> DNA<span class='csystem'>[</span>i+<span class='nums'>1</span><span class='csystem'>]</span> == <span class='strings'>'U'</span> <span class='csystem'>&&</span> DNA<span class='csystem'>[</span>i+<span class='nums'>2</span><span class='csystem'>]</span> == <span class='strings'>'G'</span><span class='csystem'>){</span>
-            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[5] Mutations - "</span>;
-            <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"GTG True</span><span class='system'>\n</span><span class='strings'>"</span>;
-        <span class='csystem'>}</span>
-    <span class='csystem'>}</span>  
-<span class='csystem'>}</span>
-<span class='methods'>void</span> GCperSeg<span class='csystem'>(</span><span class='methods'>const</span> <span class='cint'>std</span>:<span class='cint'>:string</span> <span class='cstyle'>&</span>DNA,<span class='cint'>int</span> size,<span class='cint'>int</span> seg = <span class='nums'>5</span><span class='csystem'>){</span>
-    <span class='cint'>std</span>::<span class='cint'>string</span> seq = <span class='strings'>""</span>;
-    <span class='cint'>std</span>::<span class='cint'>cout</span> << <span class='strings'>"[ "</span>;
-    <span class='csystem'>for(</span><span class='cint'>int i</span> = <span class='nums'>0</span>;<span class='cint'>i</span> < size;<span class='cint'>i+=</span>seg<span class='csystem'>){</span>
-        seq += DNA.substr<span class='csystem'>(</span>i,seg<span class='csystem'>)</span>;
-        <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='csystem'>(</span>int<span class='csystem'>)</span> GCpercent<span class='csystem'>(</span>seq,seq.length<span class='csystem'>())</span> << <span class='strings'>'%'</span> << <span class='strings'>' '</span>;
-        seq.clear<span class='csystem'>()</span>;
-    <span class='csystem'>}</span>
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>']'</span>;
-<span class='csystem'>}</span>
-
-<span class='strings'>// Now I use my functions in my big function "the main function"</span>
-<span class='cint'>int</span> main<span class='cstyle'>()</span><span class='csystem'> {</span>
-    system<span class='csystem'>(</span><span class='strings'>"clear"</span><span class='csystem'>)</span>;
-    <span class='strings'>// Make the DNA</span>
-    makeDNA<span class='csystem'>()</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[1] Sequence - "</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << DNA << <span class='strings'>"</span><span class='system'>\n\n</span><span class='strings'>"</span>;
-    <span class='strings'>// Make the RNA for proteinsynthesis</span>
-    makeRNA<span class='csystem'>()</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[2] RNA - "</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << DNA << <span class='strings'>"</span><span class='system'>\n\n</span><span class='strings'>"</span>;
-    <span class='strings'>// Count every appearence of a nucleotide</span>
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[3] Count DNA - "</span>;
-    countDNA<span class='csystem'>()</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"</span><span class='system'>\n\n</span><span class='strings'>"</span>;
-    <span class='strings'>// Calculate the GC percentage</span>
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[4] GC percentage - "</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << GCpercent<span class='csystem'>(</span>DNA,DNA.length<span class='csystem'>())</span> << <span class='strings'>"%</span><span class='system'>\n\n</span><span class='strings'>"</span>;
-    <span class='strings'>// GTG Mutation</span>
-    mutations<span class='csystem'>(</span>DNA,DNA.length<span class='csystem'>())</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"</span><span class='system'>\n</span><span class='strings'>"</span>;
-    <span class='strings'>// GC percentage per section</span>
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='strings'>"[6] GC per section - "</span>;
-    GCperSeg<span class='csystem'>(</span>DNA,DNA.length<span class='csystem'>())</span>;
-    <span class='cint'>std</span>::<span class='func'>cout</span> << <span class='cint'>std</span>::<span class='cint'>endl</span>;
-    <span class='csystem'>return</span> <span class='nums'>0</span>;
-<span class='csystem'>}</span>
-        </pre>
+    <section id='C++ Bioinformatics'>
+        <h2>C++ Bioinformatics</h2>
+        <p>
+            This is a simple console-based program that analyzes DNA strands in C++. The program reads a DNA strand and provides insights into the genetic code of organisms. The program is used to demonstrate the syntax and structure of a C++ program.
+        </p>
+        <p>
+            <a href="cppBio.html">View C++ Bioinformatics</a>
+        </p>
+    </section>
+    <section id='Python Bioinformatics'>
+        <h2>Python Bioinformatics</h2>
+        <p>
+            This is a simple console-based program that analyzes DNA strands in Python. The program reads a DNA strand and provides insights into the genetic code of organisms. The program is used to demonstrate the syntax and structure of a Python program.
+        </p>
+        <p>
+            <a href="pyBio.html">View Python Bioinformatics</a>
+        </p>
     </section>
 <script src="myscript.js"></script>
 </body>
