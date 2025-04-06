@@ -1,6 +1,6 @@
 # Immanuel Mboowa
 
-Welcome to my personal website. This repository contains the source code for my portfolio, which showcases my work in the fields of **Computer Science**, **Computational Biology**, **Blender**, **Web Development** and **Chess**.
+Welcome to my personal website. This repository contains the source code for my portfolio, which showcases my work in the fields of **Computer Science**, **Computational Biology**, **Blender**, and **Web Development**.
 
 ## About Me
 
