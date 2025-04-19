@@ -4,7 +4,7 @@ Welcome to my personal website. This repository contains the source code for my 
 
 ## About Me
 
-I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Artificial Intelligence**, **Computational Biology**, **Web Development**, and **3D Animation and Modeling**. My goal is to create innovative solutions that contribute to these fields.
+I am a passionate developer with expertise in **Python** and **C++** programming. I am particularly interested in **Making the next quantum computer**, **Artificial Intelligence**, **Computational Biology**, **Web Development**, and **3D Animation and Modeling**. My goal is to create innovative solutions that contribute to these fields.
 
 ## Projects
 
@@ -12,6 +12,8 @@ In this repository, you can explore various projects I have worked on, including
 
 - **Python Projects**: AI applications, bioinformatics tools, and simple utility scripts.
 - **C++ Projects**: Console-based applications, games, and efficiency-driven programs.
+- **C Projects**: Database project, shell,and simple games.
+- **Assembly**: Shell, Hello World, and Loops.
 - **Major Projects**: Blender scenes, and Bioinformatics applications.
 
 ## Technologies Used
