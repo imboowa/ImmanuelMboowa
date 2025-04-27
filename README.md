@@ -34,6 +34,3 @@ You can reach out to me via the following links:
 - **Email**: [emboowae@gmail.com](mailto:emboowae@gmail.com)
 - **GitHub**: [https://github.com/imboowa](https://github.com/imboowa)
 - **LinkedIn**: [https://www.linkedin.com/in/immanuel-mboowa-773b65343/](https://www.linkedin.com/in/immanuel-mboowa-773b65343/)
-
-## Copyright
-© 2025 Immanuel Mboowa. All rights observed.
