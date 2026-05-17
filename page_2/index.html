@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+          <meta property="og:title" content="imboowa">
+          <meta property="og:description" content="Computational Biology|Computer Science|Computer Graphics">
+          <meta property="og:url" content="https://imboowa.github.io/ImmanuelMboowa/">
+          <meta property="og:locale" content="en_US">
+          <meta property="og:type" content="website">
+          <meta property="og:site_name" content="imboowa">
+          <meta property="og:publish_date" content="02/18/2026">
+          <meta name="description" content="Computational Biology|Computer Science|Computer Graphics">
+          <meta name="author" content="Immanuel Mboowa">
+
+          <link rel="icon" type="image/jpg" href="/page_1/images/Memoji.jpg">
+
+          <title>imboowa</title>
+
+          <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+
+        <!-- Header Section -->
+        <header id="for_the_header">
+            <a href="../page_1/index.html" style="padding: 20px;" class="link">Immanuel Mboowa</a>
+            <a><small id="About">About</small></a>
+            <a><small id="Computers">Computers</small></a>
+        </header>
+
+        <!-- Main section -->
+        <div class="container" id="container_1">
+            <!-- About Paragraph Section -->
+            <div class="box" id="about_box">
+                <h2>
+                    I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
+                    and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
+                    world. I aim to contribute to these fields of Computers.
+                </h2>
+            </div>
+            <!-- Computer Science Section -->
+            <div class="box" id="computer_box">
+                <h1>Computer Science</h1>
+                    <p>Python</p>
+                    <p><a href="../page_3/index.html" class="link">C</a></p>
+                    <p><a href="../page_4/index.html" class="link">ARM Assembly</a></p>
+                <h1>Computer Graphics</h1>
+                    <p><a href="../page_5/index.html" class="link">Blender</a></p>
+            </div>
+        </div>
+
+        <div>
+            <h1 style="text-align: center;">Python</h1>
+        </div>
+        <div style="background-color: #f0f5fc;">
+            <p style="text-align: center; background-color: black; color: white; margin: 0px;">company.py</p>
+            <div>
+                <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <pre style="overflow: scroll;">
+<span class="system">class</span> Employee:
+    <span class="system">def</span> <span class="special">__init__</span>(<span class="special">self</span>, employee_name, employee_address, shift_hours):
+        <span class="special">self</span>.name = employee_name
+        <span class="special">self</span>.address = employee_address
+        <span class="special">self</span>.hours = shift_hours
+
+<span class="system">class</span> Task:
+    <span class="system">def</span> <span class="special">__init__</span>(<span class="special">self</span>, task_doer, task_name, due_date):
+        <span class="special">self</span>.task_doer = task_doer
+        <span class="special">self</span>.task_name = task_name
+        <span class="special">self</span>.due_date = due_date
+
+<span class="system">class</span> Product:
+    <span class="system">def</span> <span class="special">__init__</span>(<span class="special">self</span>, product_name, product_price, product_tax):
+        <span class="special">self</span>.product_name = product_name
+        <span class="special">self</span>.product_price = product_price
+        <span class="special">self</span>.product_tax = product_tax
+
+<span class="system">class</span> Company:
+    <span class="system">def</span> <span class="special">__init__</span>(<span class="special">self</span>, company_id):
+        <span class="special">self</span>.employees = <span class="name">list</span>()
+        <span class="special">self</span>.tasks = <span class="name">list</span>()
+        <span class="special">self</span>.id = company_id
+        <span class="special">self</span>.products = <span class="name">list</span>()
+
+    <span class="system">def</span> <span class="name">get_employees</span>(<span class="special">self</span>):
+        <span class="system">return</span> <span class="special">self</span>.employees
+    <span class="system">def</span> <span class="name">get_tasks</span>(<span class="special">self</span>):
+        <span class="system">return</span> <span class="special">self</span>.tasks
+    <span class="system">def</span> <span class="name">get_products</span>(<span class="special">self</span>):
+        <span class="system">return</span> <span class="special">self</span>.products
+
+    <span class="system">def</span> <span class="name">add_employee</span>(<span class="special">self</span>, employee):
+         <span class="special">self</span>.employees.<span class="name">append</span>(employee)
+    <span class="system">def</span> <span class="name">add_task</span>(<span class="special">self</span>, task):
+         <span class="special">self</span>.tasks.<span class="name">append</span>(task)
+    <span class="system">def</span> <span class="name">add_product</span>(<span class="special">self</span>, product):
+         <span class="special">self</span>.products.<span class="name">append</span>(product)
+
+    <span class="system">def</span> <span class="name">update_employee</span>(<span class="special">self</span>, old_employee_name, new_employee_object):
+        <span class="system">for</span> index, employee <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.employees):
+            <span class="system">if</span> employee.name <span class="system">is</span> old_employee_name:
+                <span class="special">self</span>.employees[index] = new_employee_object
+                <span class="system">break</span>
+    <span class="system">def</span> <span class="name">update_task</span>(<span class="special">self</span>, old_task_name, new_task_object):
+        <span class="system">for</span> index, task <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.tasks):
+            <span class="system">if</span> task.task_name <span class="system">is</span> old_task_name:
+                <span class="special">self</span>.tasks[index] = new_task_object
+                <span class="system">break</span>
+    <span class="system">def</span> <span class="name">update_product</span>(<span class="special">self</span>, old_product_name, new_product_object):
+        <span class="system">for</span> index, product <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.products):
+            <span class="system">if</span> product.product_name <span class="system">is</span> old_product_name:
+                <span class="special">self</span>.products[index] = new_product_object
+                <span class="system">break</span>
+
+    <span class="system">def</span> <span class="name">remove_employee</span>(<span class="special">self</span>, employee_name):
+        <span class="system">for</span> index, employee <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.employees):
+            <span class="system">if</span> employee.name <span class="system">is</span> employee_name:
+                <span class="special">self</span>.employees[index] = <span class="system">None</span>
+                <span class="system">break</span>
+    <span class="system">def</span> <span class="name">remove_task</span>(<span class="special">self</span>, task_name):
+        <span class="system">for</span> index, task <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.tasks):
+            <span class="system">if</span> task.task_name <span class="system">is</span> task_name:
+                <span class="special">self</span>.tasks[index] = <span class="system">None</span>
+                <span class="system">break</span>
+    <span class="system">def</span> <span class="name">remove_product</span>(<span class="special">self</span>, product_name):
+        <span class="system">for</span> index, product <span class="system">in</span> <span class="name">enumerate</span>(<span class="special">self</span>.products):
+            <span class="system">if</span> product.product_name <span class="system">is</span> product_name:
+                <span class="special">self</span>.products[index] = <span class="system">None</span>
+                <span class="system">break</span>
+
+company_1 = <span class="name">Company</span>(<span class="int">1001</span>)
+company_1.<span class="name">add_employee</span>(Employee(<span class="string">"John Doe"</span>, <span class="string">"10 Mel Dr"</span>, <span class="int">8</span>))
+company_1.<span class="name">add_task</span>(Task(<span class="string">"John Doe"</span>, <span class="string">"Clean countertop"</span>, <span class="string">"tomorrow"</span>))
+company_1.<span class="name">add_task</span>(Task(<span class="string">"John Doe"</span>, <span class="string">"Counting drawer"</span>, <span class="string">"next one hour"</span>))
+company_1.<span class="name">add_employee</span>(Employee(<span class="string">"Mike Lime"</span>, <span class="string">"2 New York Ave."</span>, <span class="int">9</span>))
+company_1.<span class="name">add_task</span>(Task(<span class="string">"Mike Lime"</span>, <span class="string">"Do nothing"</span>, <span class="string">"now"</span>))
+company_1.<span class="name">add_employee</span>(Employee(<span class="string">"Kim Kent"</span>, <span class="string">"1 Wayne Ln."</span>, <span class="int">8</span>))
+company_1.<span class="name">add_task</span>(Task(<span class="string">"Kim Kent"</span>, <span class="string">"Close store"</span>, <span class="string">"next one hour"</span>))
+company_1.<span class="name">add_product</span>(Product(<span class="string">"Jacket"</span>, <span class="int">79.99</span>, <span class="int">2.99</span>))
+company_1.<span class="name">add_product</span>(Product(<span class="string">"Belt"</span>, <span class="int">9.99</span>, <span class="int">1.99</span>))
+company_1.<span class="name">update_employee</span>(<span class="string">"John Doe"</span>, Employee(<span class="string">"John Doe"</span>, <span class="string">"10 Jude St"</span>, <span class="int">8</span>))
+company_1.<span class="name">update_task</span>(<span class="string">"Counting drawer"</span>, Task(<span class="string">"John Doe"</span>,<span class="string">"Save money"</span>, <span class="string">"now"</span>))
+company_1.<span class="name">update_product</span>(<span class="string">"Jacket"</span>, Product(<span class="string">"Bucket"</span>, <span class="int">9.99</span>, <span class="int">0.99</span>))
+company_1.<span class="name">remove_employee</span>(<span class="string">"John Doe"</span>)
+company_1.<span class="name">remove_task</span>(<span class="string">"Clean countertop"</span>)
+company_1.<span class="name">remove_product</span>(<span class="string">"Bucket"</span>)
+
+<span class="system">for</span> object_employee <span class="system">in</span> company_1.<span class="name">get_employees</span>():
+    <span class="system">if</span> object_employee <span class="system">is</span> <span class="system">None</span>:
+        <span class="system">continue</span>
+    <span class="name">print</span>(<span class="string">f"Name: <span class="system">{</span>object_employee.name<span class="system">}\n</span>Address: <span class="system">{</span>object_employee.address<span class="system">}\n</span>Shift hours: <span class="system">{</span>object_employee.hours<span class="system">}\n</span>"</span>)
+<span class="name">print</span>()
+<span class="system">for</span> object_task <span class="system">in</span> company_1.<span class="name">get_tasks</span>():
+    <span class="system">if</span> object_task <span class="system">is</span> <span class="system">None</span>:
+        <span class="system">continue</span>
+    <span class="name">print</span>(<span class="string">f"Employee: <span class="system">{</span>object_task.task_doer<span class="system">}\n\t</span>Task name: <span class="system">{</span>object_task.task_name<span class="system">}\n\t</span>Due date: <span class="system">{</span>object_task.due_date<span class="system">}</span>"</span>)
+<span class="name">print</span>()
+<span class="system">for</span> object_product <span class="system">in</span> company_1.<span class="name">get_products</span>():
+    <span class="system">if</span> object_product <span class="system">is</span> <span class="system">None</span>:
+        <span class="system">continue</span>
+    <span class="name">print</span>(<span class="string">f"Product name: <span class="system">{</span>object_product.product_name<span class="system">}\n\t</span>Price: <span class="system">{</span>object_product.product_price<span class="system">}\n\t</span>Tax: <span class="system">{</span>object_product.product_tax<span class="system">}</span>"</span>)
+                    </pre>
+                </span>
+                <span class="explain_code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <p>
+                        A class in <i>Python</i> is a feature that allows the user to create a "store" that has different kinds of datatypes.
+                        <br><br><br><br>
+                        In this scenario, the employee class stores variables with different datatypes:<br><br>employee_name, string<br>employee_address,
+                        string<br>shift_hours, int<br><br>The Task class stores variables:<br><br>task_doer, string<br>task_name, string<br>due_date, string<br><br>The
+                        product class stores variable:<br><br>product_name, string<br>product_price, float<br>product_tax, float<br><br>The Company class stores
+                        a list of employees, a list of tasks, a company_id, and a list of products.
+                        <br><br><br><br>
+                        In the company class a manager can get a list of employees objects by using the <span style="background-color: grey; border-radius: 2px;">get_employees()</span>
+                        method, a manager can get a list of tasks objects by using the <span style="background-color: grey; border-radius: 2px;">
+                        get_tasks()</span> method, a manager can get a list of products objects by using the <span style="background-color: grey; border-radius: 2px;">
+                        get_products()</span> method. In addition, a manager can add an employee object by using the <span style="background-color: grey; border-radius: 2px;">
+                        add_employee(employee)</span> method, a manager can add a task by using the <span style="background-color: grey; border-radius: 2px;">
+                        add_task(task)</span> method, a manager can add a product by using the <span style="background-color: grey; border-radius: 2px;">
+                        add_product(product)</span> method. All employees, tasks, and products can be updated by a manager by using these methods:
+                        <br><br>
+                        <span style="background-color: grey; border-radius: 2px;">update_employee(old_employee_name, new_employee_object)</span>, <span style="background-color: grey; border-radius: 2px;">
+                        update_task(old_task_name, new_task_object)</span>, <span style="background-color: grey; border-radius: 2px;">
+                        update_product(old_product_name, new_product_object)</span> respectively.
+                        <br><br>
+                        A manager can remove employees, tasks, and products by using these methods:<br><br><span style="background-color: grey; border-radius: 2px;">
+                        remove_employee(employee_name)</span>,<br><span style="background-color: grey; border-radius: 2px;">remove_task(task_name)</span>,<br>
+                        <span style="background-color: grey; border-radius: 2px;">remove_product(product_name)</span>
+                    </p>
+                </span>
+            </div>
+
+            <hr>
+            <p style="text-align: center; background-color: white; color: black; margin: 10px; border-radius: 5px;">credit_card_validator.py</p>
+            <div style="display: flex;">
+                <span class="code_section">
+                    <pre style="overflow: scroll;">
+<span class="comment"># Create variables to handle variants</span>
+card_number = <span class="name">input</span>(<span class="string">"Enter a card number "</span>)
+card_number = card_number.<span class="name">replace</span>(<span class="string">" "</span>,<span class="string">""</span>)
+card_number = card_number.<span class="name">replace</span>(<span class="string">"-"</span>,<span class="string">""</span>)
+<span class="comment"># Reverse the card number</span>
+card_number = card_number[::<span class="int">-1</span>]
+
+sum_of_odd_nums = <span class="int">0</span>
+sum_of_even_nums = <span class="int">0</span>
+total = <span class="int">0</span>
+
+<span class="comment"># Loop for all odd places and sum them all up</span>
+<span class="system">for</span> i <span class="system">in</span> card_number[::<span class="int">2</span>]:
+    sum_of_odd_nums += <span class="name">int</span>(i)
+
+<span class="comment"># Loop for all even places and multiply</span>
+<span class="system">for</span> i <span class="system">in</span> card_number[<span class="int">1</span>::<span class="int">2</span>]:
+    x = <span class="name">int</span>(i) * <span class="int">2</span>
+    <span class="comment"># If greater than 9</span>
+    <span class="system">if</span> x >= <span class="int">10</span>:
+        <span class="comment"># Split it using modulus</span>
+        sum_of_even_nums += (<span class="int">1</span> + (<span class="name">int</span>(x) % <span class="int">10</span>))
+    <span class="system">else</span>:
+        <span class="comment"># Else, sum them all up</span>
+        sum_of_even_nums += <span class="name">int</span>(x)
+
+<span class="comment"># Sum the total of even places and odd places</span>
+total = sum_of_even_nums + sum_of_odd_nums
+
+<span class="comment"># If sum is divisible by 10, valid</span>
+<span class="system">if</span> total % <span class="int">10</span> == <span class="int">0</span>:
+    <span class="name">print</span>(<span class="string">"Valid"</span>)
+<span class="comment"># Else, invalid</span>
+<span class="system">else</span>:
+    <span class="name">print</span>(<span class="string">"Invalid"</span>)
+                    </pre>
+                </span>
+                <span class="explain_code_section">
+                    <p>
+                        The code receives a credit or debit card number and removes all <span style="background-color: grey; border-radius: 2px;">
+                        -</span>, <span style="background-color: grey; border-radius: 2px;">spaces</span>. The code reverses the card number
+                        like 12345 would be 54321.<br><br><br>
+                        Loop through the reversed card number on only odd positions and sum them all up by adding that number to the
+                        <span style="background-color: grey; border-radius: 2px;">sum_of_odd_nums</span>.
+                        <br><br><br>
+                        Loop through the reversed card number.<br><br>
+                        Multiply the numbers in the even positions by 2.<br><br>
+                        If the product is greater than 9, split the number like 18 would become 1 and 8 (modulus helps achieve this) then add those two numbers like 1 and 8 will be 9
+                        and add that number, in this case 9, to the <span style="background-color: grey; border-radius: 2px;">sum_of_even_nums</span><br><br>
+                        Else, just add that product to the <span style="background-color: grey; border-radius: 2px;">sum_of_even_nums</span><br><br><br>
+                        Add the <span style="background-color: grey; border-radius: 2px;">sum_of_odd_nums</span> and <span style="background-color: grey; border-radius: 2px;">sum_of_even_nums</span><br><br><br>
+                        If the total is divisible by 10, that credit or debit card number is valid.
+                        Else, it is invalid.
+                    </p>
+                </span>
+            </div>
+
+            <p style="text-align: center; background-color: white; color: black; margin: 10px; border-radius: 5px;">countdown.py</p>
+            <div style="display: flex;">
+                <span class="code_section" id="code_section_3" style="margin: 0px; border-radius: 0px;">
+                    <pre style="overflow: scroll;">
+<span class="system">import</span> time
+
+tik_tok = <span class="name">int</span>(<span class="name">input</span>(<span class="string">"enter a number of seconds: "</span>))  <span class="comment"># enter some time to be calculated</span>
+
+<span class="system">for</span> i <span class="system">in</span> <span class="name">range</span>(tik_tok,<span class="int">0</span>,<span class="int">-1</span>):  <span class="comment"># iterate for every second</span>
+    seconds = <span class="name">int</span>(i) % <span class="int">60</span>  <span class="comment"># the seconds shouldn't exceed 60 seconds(% means modulus in math)</span>
+    minutes = <span class="name">int</span>(i / <span class="int">60</span>) % <span class="int">60</span>  <span class="comment"># minutes don't go above 60 minutes</span>
+    hours = <span class="name">int</span>(i / <span class="int">3600</span>) % <span class="int">24</span>  <span class="comment"># hours shouldn't exceed 24 hours</span>
+    days = <span class="name">int</span>(i / <span class="int">86400</span>) % <span class="int">7</span>  <span class="comment"># days shouldn't exceed 7 days</span>
+    weeks = <span class="name">int</span>(i / <span class="int">604800</span>)
+    time.<span class="name">sleep</span>(<span class="int">1</span>)  <span class="comment"># time will delay by 1 second</span>
+    <span class="name">print</span>(<span class="string">f"W<span class="system">{</span>weeks:<span class="int">02</span><span class="system">}</span> D:<span class="system">{</span>days:<span class="int">02</span><span class="system">}</span> H:<span class="system">{</span>hours:<span class="int">02</span><span class="system">}</span> M:<span class="system">{</span>minutes:<span class="int">02</span><span class="system">}</span> S:<span class="system">{</span>seconds:<span class="int">02</span><span class="system">}</span>"</span>)
+                    </pre>
+                </span>
+            </div>
+        </div>
+
+        <div style="background-color: #cccccc; display: flex;" id="Contact">
+            <small style="font-size: 2rem;">Contact</small>
+            <!-- About Section -->
+            <div class="box" id="contact_box">
+                <a href="https://github.com/imboowa" target="_blank" style="width: 50%;">Github</a>
+                <a href="https://www.linkedin.com/in/imboowa/" target="_blank" style="width: 50%;">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="for_the_footer">&copy; Immanuel Mboowa. All Rights Reserved.</footer>
+
+        <script src="../myscript.js"></script>
+    </body>
+</html>

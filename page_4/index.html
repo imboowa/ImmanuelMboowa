@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta property="og:title" content="imboowa">
+        <meta property="og:description" content="Computational Biology|Computer Science|Computer Graphics">
+        <meta property="og:url" content="https://imboowa.github.io/ImmanuelMboowa/">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="imboowa">
+        <meta property="og:publish_date" content="02/18/2026">
+        <meta name="description" content="Computational Biology|Computer Science|Computer Graphics">
+        <meta name="author" content="Immanuel Mboowa">
+
+        <link rel="icon" type="image/jpg" href="/page_1/images/Memoji.jpg">
+
+        <title>imboowa</title>
+
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+
+        <!-- Header Section -->
+        <header id="for_the_header">
+            <a href="../page_1/index.html" style="padding: 20px;" class="link">Immanuel Mboowa</a>
+            <a><small id="About">About</small></a>
+            <a><small id="Computers">Computers</small></a>
+        </header>
+
+        <!-- Main section -->
+        <div class="container" id="container_1">
+            <!-- About Paragraph Section -->
+            <div class="box" id="about_box">
+                <h2>
+                    I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
+                    and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
+                    world. I aim to contribute to these fields of Computers.
+                </h2>
+            </div>
+            <!-- Computer Science Section -->
+            <div class="box" id="computer_box">
+                <h1>Computer Science</h1>
+                    <p><a href="../page_2/index.html" class="link">Python</a></p>
+                    <p><a href="../page_3/index.html" class="link">C</a></p>
+                    <p>ARM Assembly</p>
+                <h1>Computer Graphics</h1>
+                    <p><a href="../page_5/index.html" class="link">Blender</a></p>
+            </div>
+        </div>
+
+
+
+
+        <div>
+            <h1 style="text-align: center;">ARM Assembly</h1>
+        </div>
+        <p style="text-align: center; background-color: black; color: white; border-radius: 0px;">start.s</p>
+        <div style="background-color: #f0f5fc;">
+            <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+              <pre style="overflow: scroll;">
+<span class="system">.global</span> _main        <span class="comment">// main global to CPU</span>
+<span class="system">.align</span> <span class="int">4</span>
+
+<span class="name">_main</span>:
+  <span class="special">adr</span> X3, name       <span class="comment">// one argument needed for get_length</span>
+  <span class="special">bl</span> get_length      <span class="comment">// call get_length</span>
+  <span class="special">adr</span> X5, name       <span class="comment">// give the arguments needed by printf</span>
+  <span class="special">mov</span> X6, X0
+  <span class="special">bl</span> printf          <span class="comment">// call our sweet printf(legends in C)</span>
+  <span class="special">mov</span> X4, #<span class="int">0</span>         <span class="comment">// make X0 == 0</span>
+<span class="name">start</span>:
+  <span class="special">cmp</span> X4, #<span class="int">3</span>         <span class="comment">// cmp is X0 == 5</span>
+  <span class="special">bge</span> end_loop       <span class="comment">// 1 bge end_loop 0 none</span>
+  <span class="special">adr</span> X3, greet
+  <span class="special">bl</span> get_length
+  <span class="special">adr</span> X5, greet
+  <span class="special">mov</span> X6, X0
+  <span class="special">bl</span> printf
+  <span class="special">add</span> X4, X4, #<span class="int">1</span>     <span class="comment">// add 1 to X4(counter)</span>
+  <span class="special">b</span> start            <span class="comment">// branch to start</span>
+<span class="name">get_length</span>:
+  <span class="special">mov</span> X0, #<span class="int">0</span>         <span class="comment">// initialize counter to 0</span>
+  <span class="special">mov</span> X1, X3         <span class="comment">// get arguments into parameter</span>
+<span class="name">loop</span>:
+  <span class="special">ldrb</span> W7, [X3, X0]  <span class="comment">// load the lower byte(char) -> reset of space, zeroed out(memory friendly)</span>
+  <span class="special">cmp</span> W7, #<span class="int">0</span>         <span class="comment">// check if value in W7 is null terminator(0) at some point</span>
+  <span class="special">add</span> X0, X0, #<span class="int">1</span>     <span class="comment">// increment offset(index)/(counter)</span>
+  <span class="special">bne</span> loop           <span class="comment">// if not equal to counter, loop again</span>
+  <span class="special">ret</span>                <span class="comment">// else, return</span>
+<span class="name">printf</span>:
+  <span class="special">mov</span> X0, #<span class="int">1</span>         <span class="comment">// make stdout fd -> 1</span>
+  <span class="special">mov</span> X1, X5         <span class="comment">// prep MEM address -> name</span>
+  <span class="special">mov</span> X2, X6         <span class="comment">// get length of MEM</span>
+  <span class="special">mov</span> X16, #<span class="int">4</span>        <span class="comment">// write name</span>
+  <span class="special">svc</span> <span class="int">0</span>              <span class="comment">// syscall</span>
+  <span class="special">ret</span>
+<span class="name">end_loop</span>:
+  <span class="special">mov</span> X16, #<span class="int">1</span>        <span class="comment">// exit 1 == success</span>
+  <span class="special">mov</span> X0, #<span class="int">0</span>         <span class="comment">// return 0 -> success</span>
+  <span class="special">svc</span> <span class="int">0</span>              <span class="comment">// syscall</span>
+
+<span class="name">name</span>:
+  <span class="system">.ascii</span> <span class="string">"for loop\n\0"</span>
+<span class="name">greet</span>:
+  <span class="system">.ascii</span> <span class="string">"Hello, World!\n\0"</span>
+              </pre>
+            </span>
+        </div>
+
+        <p style="text-align: center; background-color: black; color: white; border-radius: 0px;">main.s</p>
+        <div style="background-color: #f0f5fc;">
+            <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+              <pre style="overflow: scroll;">
+<span class="system">.global</span> _main
+
+<span class="system">.align</span> <span class="int">4</span>
+
+<span class="name">_main</span>:
+  <span class="special">b</span> open_file      <span class="comment">// Branch To open_file</span>
+
+<span class="name">open_file</span>:
+  <span class="special">adr</span> X0, fileName <span class="comment">// Get The Address Of The File Name</span>
+  <span class="special">mov</span> X1, #<span class="int">577</span>     <span class="comment">// Flag To Open</span>
+  <span class="special">mov</span> X2, #<span class="int">420</span>
+  <span class="special">mov</span> X16, #<span class="int">5</span>      <span class="comment">// Open File</span>
+  <span class="special">svc</span> <span class="int">0</span>
+  <span class="special">mov</span> X9, X0       <span class="comment">// Save File Descriptor</span>
+
+<span class="name">write</span>:
+  <span class="special">mov</span> X0, X9       <span class="comment">// Load Saved File Descriptor</span>
+  <span class="special">adr</span> X1, buffer   <span class="comment">// Load What To Write</span>
+  <span class="special">mov</span> X2, #<span class="int">45</span>
+  <span class="special">mov</span> X16, #<span class="int">4</span>      <span class="comment">// Write To File</span>
+  <span class="special">svc</span> <span class="int">0</span>
+
+<span class="name">close</span>:
+  <span class="special">mov</span> X0, X9       <span class="comment">// Load Saved File Descriptor</span>
+  <span class="special">mov</span> X16, #<span class="int">6</span>      <span class="comment">// Close File</span>
+  <span class="special">svc</span> <span class="int">0</span>
+
+<span class="name">end</span>:
+  <span class="special">mov</span> X16, #<span class="int">1</span>      <span class="comment">// Exit Program</span>
+  <span class="special">svc</span> <span class="int">0</span>
+
+<span class="name">buffer</span>:
+  <span class="system">.asciz</span> <span class="string">"Hello,\n\nFrom A Text Pester\nSee ya\n"</span>
+<span class="name">fileName</span>:
+  <span class="system">.asciz</span> <span class="string">"output.txt"</span>
+            </pre>
+            </span>
+        </div>
+
+
+
+        <div style="background-color: #cccccc; display: flex;" id="Contact">
+            <small style="font-size: 2rem;">Contact</small>
+            <!-- About Section -->
+            <div class="box" id="contact_box">
+                <a href="https://github.com/imboowa" target="_blank" style="width: 50%;">Github</a>
+                <a href="https://www.linkedin.com/in/imboowa/" target="_blank" style="width: 50%;">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="for_the_footer">&copy; Immanuel Mboowa. All Rights Reserved.</footer>
+
+        <script src="../myscript.js"></script>
+    </body>
+</html>

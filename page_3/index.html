@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+          <meta property="og:title" content="imboowa">
+          <meta property="og:description" content="Computational Biology|Computer Science|Computer Graphics">
+          <meta property="og:url" content="https://imboowa.github.io/ImmanuelMboowa/">
+          <meta property="og:locale" content="en_US">
+          <meta property="og:type" content="website">
+          <meta property="og:site_name" content="imboowa">
+          <meta property="og:publish_date" content="02/18/2026">
+          <meta name="description" content="Computational Biology|Computer Science|Computer Graphics">
+          <meta name="author" content="Immanuel Mboowa">
+
+          <link rel="icon" type="image/jpg" href="/page_1/images/Memoji.jpg">
+
+          <title>imboowa</title>
+
+          <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+
+        <!-- Header Section -->
+        <header id="for_the_header">
+            <a href="../page_1/index.html" style="padding: 20px;" class="link">Immanuel Mboowa</a>
+            <a><small id="About">About</small></a>
+            <a><small id="Computers">Computers</small></a>
+        </header>
+
+        <!-- Main section -->
+        <div class="container" id="container_1">
+            <!-- About Paragraph Section -->
+            <div class="box" id="about_box">
+                <h2>
+                    I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
+                    and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
+                    world. I aim to contribute to these fields of Computers.
+                </h2>
+            </div>
+            <!-- Computer Science Section -->
+            <div class="box" id="computer_box">
+                <h1>Computer Science</h1>
+                    <p><a href="../page_2/index.html" class="link">Python</a></p>
+                    <p>C</p>
+                    <p><a href="../page_4/index.html" class="link">ARM Assembly</a></p>
+                <h1>Computer Graphics</h1>
+                    <p><a href="../page_5/index.html" class="link">Blender</a></p>
+            </div>
+        </div>
+
+
+        <div>
+            <h1 style="text-align: center;">C</h1>
+        </div>
+        <div style="background-color: #f0f5fc;">
+            <p style="text-align: center; background-color: black; color: white; margin: 10px; border-radius: 5px;">common.h</p>
+            <div style="display: flex;">
+                <span class="code_section" id="common_h">
+                    <pre style="overflow: scroll;">
+<span class="special">#ifndef</span> <span class="system">COMMON_H</span>
+<span class="special">#define</span> <span class="system">COMMON_H</span>
+
+<span class="special">#include</span> <span class="system">&ltstdbool.h&gt</span>
+
+<span class="special">#define</span> MAX_LEN <span class="int">20</span>
+<span class="special">#define</span> MAX_ITEMS <span class="int">5</span>
+
+<span class="system">struct</span> Stack {
+    <span class="system">char</span> items[MAX_ITEMS][MAX_LEN];
+    <span class="system">int</span> top;
+};
+<span class="system">void</span> <span class="name">stackInit</span>(<span class="system">struct Stack</span> *stack);
+<span class="system">int</span> <span class="name">stackPush</span>(<span class="system">struct Stack</span> *stack, <span class="system">char</span> *string);
+<span class="system">char</span>* <span class="name">stackPop</span>(<span class="system">struct Stack</span> *stack);
+<span class="system">void</span> <span class="name">reverseStack</span>(<span class="system">struct Stack</span> *stack);
+<span class="system">int</span> <span class="name">searchStack</span>(<span class="system">struct Stack</span> *stack, <span class="system">char</span> *target);
+<span class="system">bool</span> <span class="name">isStackEmpty</span>(<span class="system">struct Stack</span> *stack);
+
+
+<span class="system">struct</span> Queue {
+    <span class="system">char</span> items[MAX_ITEMS][MAX_LEN];
+    <span class="system">int</span> front;
+    <span class="system">int</span> rear;
+};
+<span class="system">void</span> <span class="name">queueInit</span>(<span class="system">struct Queue</span> *queue);
+<span class="system">int</span> <span class="name">enqueue</span>(<span class="system">struct Queue</span> *queue, <span class="system">char</span> *string);
+<span class="system">char</span>* <span class="name">dequeue</span>(<span class="system">struct Queue</span> *queue);
+<span class="system">void</span> <span class="name">reverseQueue</span>(<span class="system">struct Queue</span> *queue);
+<span class="system">int</span> <span class="name">searchQueue</span>(<span class="system">struct Queue</span> *queue, <span class="system">char</span> *target);
+<span class="system">bool</span> <span class="name">isQueueEmpty</span>(<span class="system">struct Queue</span> *queue);
+
+
+<span class="system">struct</span> Node {
+    <span class="system">char</span> data[MAX_LEN];
+    <span class="system">struct Node</span> *next;
+};
+<span class="system">struct Node</span>* <span class="name">createNode</span>(<span class="system">char</span> *data);
+<span class="system">void</span> <span class="name">freeLinkedList</span>(<span class="system">struct Node</span> *head);
+<span class="system">struct Node</span>* <span class="name">appendNode</span>(<span class="system">struct Node</span> *head, <span class="system">char</span> *data);
+
+
+<span class="system">void</span> <span class="name">bubbleSort</span>(<span class="system">int</span> array[], <span class="system">int</span> size);
+<span class="system">void</span> <span class="name">selectionSort</span>(<span class="system">int</span> array[], <span class="system">int</span> size);
+
+
+<span class="system">int</span> <span class="name">linearSearch</span>(<span class="system">int</span> array[], <span class="system">int</span> size, <span class="system">int</span> target);
+<span class="system">int</span> <span class="name">binarySearch</span>(<span class="system">int</span> array[], <span class="system">int</span> size, <span class="system">int</span> target);
+
+<span class="special">#endif</span>
+                    </pre>
+                </span>
+            </div>
+
+            <p style="text-align: center; background-color: white; color: black; border-radius: 0px;">stack.c</p>
+            <div>
+                <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <pre style="overflow: scroll;">
+<span class="special">#include</span> <span class="system">&ltstdio.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdlib.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstring.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdbool.h&gt</span>
+
+<span class="special">#include</span> <span class="system">"common.h"</span>
+
+<span class="system">void</span> <span class="name">stackInit</span>(<span class="system">struct Stack</span> *stack)
+{
+    stack->top = <span class="int">0</span>;
+}
+
+<span class="system">int</span> <span class="name">stackPush</span>(<span class="system">struct Stack</span> *stack, <span class="system">char</span> *string)
+{
+    <span class="system">if</span> (stack->top >= MAX_ITEMS)
+    <span class="system">return</span> <span class="int">-1</span>;
+    <span class="system">if</span> (<span class="name">strlen</span>(string) > MAX_LEN)
+    <span class="system">return</span> <span class="int">-1</span>;
+
+    <span class="name">strcpy</span>(stack->items[stack->top], string);
+    stack->top++;
+    <span class="system">return</span> <span class="int">0</span>;
+}
+
+<span class="system">char</span>* <span class="name">stackPop</span>(<span class="system">struct Stack</span> *stack)
+{
+    <span class="system">if</span> (stack->top == <span class="int">0</span>)
+    <span class="system">return NULL</span>;
+
+    stack->top--;
+    <span class="system">char</span> *temp = stack->items[stack->top];
+    <span class="name">memset</span>(stack->items[stack->top], <span class="int">0</span>, MAX_LEN);
+    <span class="system">return</span> temp;
+}
+
+<span class="system">void</span> <span class="name">reverseStack</span>(<span class="system">struct Stack</span> *stack)
+{
+    <span class="system">if</span> (stack->top == <span class="int">0</span>)
+    <span class="system">return</span>;
+
+    <span class="system">int</span> left = <span class="int">0</span>;
+    <span class="system">int</span> right = (stack->top - <span class="int">1</span>);
+
+    <span class="system">while</span> (left < right)
+    {
+        <span class="system">char</span> temp[MAX_LEN] = {<span class="int">0</span>};
+        <span class="name">strcpy</span>(temp, stack->items[left]);
+        <span class="name">strcpy</span>(stack->items[left], stack->items[right]);
+        <span class="name">strcpy</span>(stack->items[right], temp);
+        left++;
+        right--;
+    }
+}
+
+<span class="system">int</span> <span class="name">searchStack</span>(<span class="system">struct Stack</span> *stack, <span class="system">char</span> *target)
+{
+    <span class="system">if</span> (<span class="name">strlen</span>(target) > MAX_LEN)
+    <span class="system">return</span> <span class="int">-1</span>;
+
+    <span class="system">for</span> (<span class="system">int</span> i = <span class="int">0</span>; i < stack->top; i++)
+    {
+        <span class="system">if</span> (<span class="name">strcmp</span>(stack->items[i], target) == <span class="int">0</span>)
+        <span class="system">return</span> i;
+    }
+    <span class="system">return</span> <span class="int">-1</span>;
+}
+
+<span class="system">bool</span> <span class="name">isStackEmpty</span>(<span class="system">struct Stack</span> *stack)
+{
+    <span class="system">if</span> (stack->top == <span class="int">0</span>)
+    {
+        <span class="system">return true</span>;
+    }
+    <span class="system">else</span>
+    {
+        <span class="system">return false</span>;
+    }
+}
+                    </pre>
+                </span>
+                <span class="explain_code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <p>
+                        A stack is an algorithm that enables computer scientists to manage data following a simple rule--Last In First Out.
+                        <br><br>
+                        Let's say there are pancakes towered--stacked over each other--and we want to do something with this tower of pancakes.
+                        In reality, we could eat them, we could take off any pancakes the way we want but computers cannot do these things, rather,
+                        we have to program them.
+                        <br><br><br>
+                        So first we <span style="background-color: grey; border-radius: 2px;">stackInit()</span> the stack--this sets useful variables that the computer keeps track off.
+                        <br><br>
+                        Now the next step is that we can <span style="background-color: grey; border-radius: 2px;">stackPush()</span> new pancakes to the stack--this appends new pancakes.
+                        Remember there is "no limit" to how many pancakes this to-be-stack can possess. Our limit would be the computer's memory.
+                        <br><br><br>
+                        Note: Pop in this scenario is meaning: to remove new pancakes at the end.
+                        <br><br><br>
+                        If we feel like pancakes are in lot, we can <span style="background-color: grey; border-radius: 2px;">stackPop()</span> the stack--this removes the last new pancake.
+                        Remember, the last in is the first out. The last pancake in, is the first pancake out or popped.
+                        <br><br>
+                        We could change the rule of the stack algorithm and say if First in then first out--this is another algorithm on its own
+                        called a queue. Using the <span style="background-color: grey; border-radius: 2px;">reverseStack()</span> flips the stack, top to bottom and bottom to top.
+                        <br><br>
+                        We could search--using <span style="background-color: grey; border-radius: 2px;">searchStack()</span>--the stack of pancakes based on something, but in this case their names are used.
+                        <br><br>
+                        We could check if the stack is empty using <span style="background-color: grey; border-radius: 2px;">isStackEmpty()</span>. we could do this to prevent popping new pancakes when the stack is empty.
+                    </p>
+                </span>
+            </div>
+
+            <hr>
+            <p style="text-align: center; background-color: white; color: black; border-radius: 0px;">queue.c</p>
+            <div>
+                <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <pre style="overflow: scroll;">
+<span class="special">#include</span> <span class="system">&ltstdio.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdlib.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstring.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdbool.h&gt</span>
+
+<span class="special">#include</span> <span class="system">"common.h"</span>
+
+<span class="system">void</span> <span class="name">queueInit</span>(<span class="system">struct Queue</span> *queue)
+{
+    queue->front = <span class="int">0</span>;
+    queue->rear = <span class="int">0</span>;
+}
+
+<span class="system">int</span> <span class="name">enqueue</span>(<span class="system">struct Queue</span> *queue, <span class="system">char</span> *string)
+{
+    <span class="system">if</span> (queue->rear >= MAX_ITEMS)
+    <span class="system">return</span> <span class="int">-1</span>;
+    <span class="system">if</span> (<span class="name">strlen</span>(string) > MAX_LEN)
+    <span class="system">return</span> <span class="int">-1</span>;
+
+    <span class="name">strcpy</span>(queue->items[queue->rear], string);
+    queue->rear++;
+    <span class="system">return</span> <span class="int">0</span>;
+}
+
+<span class="system">char</span>* <span class="name">dequeue</span>(<span class="system">struct Queue</span> *queue)
+{
+    <span class="system">if</span> (queue->front == queue->rear)
+    <span class="system">return NULL</span>;
+
+    <span class="system">char</span> *temp = queue->items[queue->front];
+    <span class="name">memset</span>(queue->items[queue->front], <span class="int">0</span>, MAX_LEN);
+    queue->front++;
+    <span class="system">return</span> temp;
+}
+
+<span class="system">void</span> <span class="name">reverseQueue</span>(<span class="system">struct Queue</span> *queue)
+{
+    <span class="system">if</span> (queue->front == queue->rear)
+    <span class="system">return</span>;
+
+    <span class="system">int</span> right = (queue->rear - <span class="int">1</span>);
+    <span class="system">int</span> left = queue->front;
+
+    <span class="system">while</span> (left < right)
+    {
+        <span class="system">char</span> temp[MAX_LEN] = {<span class="int">0</span>};
+        <span class="name">strcpy</span>(temp, queue->items[left]);
+        <span class="name">strcpy</span>(queue->items[left], queue->items[right]);
+        <span class="name">strcpy</span>(queue->items[right], temp);
+        left++;
+        right--;
+    }
+}
+
+<span class="system">int</span> <span class="name">searchQueue</span>(<span class="system">struct Queue</span> *queue, <span class="system">char</span> *target)
+{
+    <span class="system">if</span> (<span class="name">strlen</span>(target) > MAX_LEN)
+    <span class="system">return</span> <span class="int">-1</span>;
+
+    <span class="system">for</span> (<span class="system">int</span> i = <span class="int">0</span>; i < queue->rear; i++)
+    {
+        <span class="system">if</span> (<span class="name">strcmp</span>(queue->items[i], target) == <span class="int">0</span>)
+        <span class="system">return</span> i;
+    }
+    <span class="system">return</span> <span class="int">-1</span>;
+}
+
+<span class="system">bool</span> <span class="name">isQueueEmpty</span>(<span class="system">struct Queue</span> *queue)
+{
+    <span class="system">if</span> (queue->rear == queue->front)
+    {
+        <span class="system">return true</span>;
+    }
+    <span class="system">else</span>
+    {
+        <span class="system">return false</span>;
+    }
+}
+                    </pre>
+                </span>
+                <span class="explain_code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <p>
+                        A queue is an algorithm that computer scientists use in their work. It follows a rule--First In First Out.
+                        <br><br>
+                        Imagine there were three customers at a supermarket who wanted to buy chocolate icecream. The first customer being A,
+                        the second being B, the third customer being C. A vendor will expect orders to come from first person to come into the line or queue
+                        and then the second person till the last person (third person). This illustrates the rule--First In line is First Out to
+                        be attended to (serviced).
+                        <br><br>
+                        If vendor wants to start the queue, the vendor calls the <span style="background-color: grey; border-radius: 2px;">queueInit()</span>
+                        function.
+                        <br><br>
+                        If the vendor wants to call someone into queue or allow someone to join the queue. The vendor can call the
+                        <span style="background-color: grey; border-radius: 2px;">enqueue()</span>function.
+                        <br><br>
+                        If vendor wants to service (attend to) a customer, just by calling the <span style="background-color: grey; border-radius: 2px;">dequeue()</span>
+                        function metaphorically means that the customer has been serviced (attend to) and removed (dequeued) of the queue.
+                        <br><br><br>
+                        <span style="background-color: grey; border-radius: 2px;">reverseQueue()</span> will reverse the queue to be last in first out hence a stack-like algorithm.
+                        <br><br>
+                        <span style="background-color: grey; border-radius: 2px;">searchQueue()</span> this will search the queue for a target and once found, it returns the index.
+                        <br><br>
+                        <span style="background-color: grey; border-radius: 2px;">isQueueEmpty</span> this will return true or false depending on whether the queue is empty or not empty.
+                        <br><br>
+                    </p>
+                </span>
+            </div>
+
+            <hr>
+            <p style="text-align: center; background-color: white; color: black; border-radius: 5px;">quiz.c</p>
+            <div>
+                <span class="code_section" style="display: block; margin: 0px; border-radius: 0px; width: 100%;">
+                    <pre style="overflow: scroll;">
+<span class="special">#include</span> <span class="system">&ltstdio.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdbool.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstdlib.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltstring.h&gt</span>
+<span class="special">#include</span> <span class="system">&ltctype.h&gt</span>
+
+<span class="system">int</span> <span class="name">main</span>(<span class="system">void</span>)
+{
+    <span class="system">char</span> questions[][<span class="int">100</span>] = {<span class="string">"Who was the first president of USA"</span>,
+                             <span class="string">"What was the year Apollo"</span>,
+                             <span class="string">"When does February have 29 days"</span>,
+                             <span class="string">"Why is Africa the hottest continent"</span>};
+
+    <span class="system">char</span> options[<span class="int">4</span>][<span class="int">2</span>][<span class="int">100</span>] = {
+        {<span class="string">"A. Abraham Lincoln"</span>, <span class="string">"B. Goerge Washington"</span>},
+        {<span class="string">"A. 1970"</span>, <span class="string">"B. 1969"</span>},
+        {<span class="string">"A. Leap Year"</span>, <span class="string">"B. Ordinary Year"</span>},
+        {<span class="string">"A. Equatorial Climate"</span>, <span class="string">"B. Solar Power"</span>}
+    };
+
+    <span class="system">char</span> answers[] = {<span class="string">'B'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>, <span class="string">'A'</span>};
+    <span class="system">char</span> guess;
+    <span class="system">int</span> numberOfQuestions = <span class="name">sizeof</span>(questions)/<span class="name">sizeof</span>(questions[<span class="int">0</span>]);
+    <span class="system">int</span> score = <span class="int">0</span>;
+
+    <span class="name">printf</span>(<span class="string">"\n......Quiz Game......\n\n"</span>);
+
+    <span class="system">for</span> (<span class="system">int</span> i = <span class="int">0</span>; i < numberOfQuestions; i++)
+    {
+        <span class="system">for</span> (<span class="system">int</span> j = <span class="int">0</span>; j < <span class="int">1</span>; j++)
+        {
+            <span class="name">printf</span>(<span class="string">"%s\n"</span>,questions[i]);
+            <span class="name">printf</span>(<span class="string">"%s\n%s\n"</span>, options[i][j],options[i][j+<span class="int">1</span>]);
+        }
+        <span class="name">printf</span>(<span class="string">"Enter a choice; "</span>);
+        <span class="name">scanf</span>(<span class="string">" %c"</span>, &guess);
+        guess = <span class="name">toupper</span>(guess);
+        <span class="system">if</span> (guess == answers[i])
+        {
+            <span class="name">printf</span>(<span class="string">"Correct\n...........\n"</span>);
+            score++;
+        } <span class="system">else</span>{
+            <span class="name">printf</span>(<span class="string">"Incorrect\n.........\n"</span>);
+        }
+    }
+
+    <span class="name">printf</span>(<span class="string">"\nScore %.1f\n..............\n"</span>, (((<span class="system">float</span>)score / (<span class="system">float</span>)numberOfQuestions) * <span class="int">100.00</span>));
+    <span class="name">printf</span>(<span class="string">"\n"</span>);
+    <span class="system">return</span> <span class="int">0</span>;
+}
+                    </pre>
+                </span>
+            </div>
+        </div>
+
+
+        <div style="background-color: #cccccc; display: flex;" id="Contact">
+            <small style="font-size: 2rem;">Contact</small>
+            <!-- About Section -->
+            <div class="box" id="contact_box">
+                <a href="https://github.com/imboowa" target="_blank" style="width: 50%;">Github</a>
+                <a href="https://www.linkedin.com/in/imboowa/" target="_blank" style="width: 50%;">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer id="for_the_footer">&copy; Immanuel Mboowa. All Rights Reserved.</footer>
+
+        <script src="../myscript.js"></script>
+    </body>
+</html>
