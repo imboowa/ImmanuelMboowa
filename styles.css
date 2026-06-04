@@ -70,8 +70,14 @@ body:has(#Contact:hover) #contact_box
 }
 #container_4
 {
-    display: flex;
+    display: block;
     background-color: #f2f2f5;
+}
+#container_5
+{
+    background-color: #4cb6f3;
+    border: 2px solid #605252;
+    padding: 10px;
 }
 #about_box
 {
