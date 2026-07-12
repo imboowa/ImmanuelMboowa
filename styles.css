@@ -1,25 +1,14 @@
-/* Global */
-*{box-sizing: border-box; text-decoration: none;}
+*
+{
+    box-sizing: border-box;
+    text-decoration: none;
+}
 body
 {
     font-family: Menlo, Roboto, Consolas;
     margin: 0px;
+    background-color: #cdcdcd;
 }
-body:has(#About:hover) #about_box
-{
-    animation-name: highlight_border;
-    animation-duration: 0.5s;
-}
-body:has(#Computers:hover) #computer_box
-{
-    animation-name: highlight_border;
-    animation-duration: 0.5s;
-}
-body:has(#Contact:hover) #contact_box
-{
-    display: flex;
-}
-@keyframes highlight_border {50%{border: 8px solid #605252}}
 #for_the_header
 {
     height: 5vh;
@@ -29,26 +18,46 @@ body:has(#Contact:hover) #contact_box
     text-align: center;
     background-color: #b9c6c9;
 }
-#for_the_footer{text-align: center;}
+#for_the_footer
+{
+    text-align: center;
+}
 .box
 {
-    width: 50%;
-    height: 50%;
-    float: left;
+    border-radius: 10px;
     padding: 10px;
     overflow: scroll;
     font-size: 1rem;
-    background-color: #c4baba;
-    border: 2px solid #605252;
+    background-color: white;
+}
+.label
+{
+    float: left;
+    padding: 10px;
+    overflow: scroll;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #9ae3d0;
+}
+.label_nav
+{
+    display: none;
+}
+#parent_label_nav:hover .label_nav
+{
+    display: block;
+}
+
+
+.link:active
+{
+    color: lightblue;
 }
 .container
 {
     padding: 5px;
     overflow: auto;
 }
-
-/* page_1/index.html */
-.link:active{color: lightblue;}
 #container_1
 {
     display: flex;
@@ -101,6 +110,8 @@ body:has(#Contact:hover) #contact_box
     width: 50%;
     height: 250px;
     padding: 10px;
+    border: solid;
+    border-radius: 0px;
     background-color: #4cb6f3;
 }
 #box_2
@@ -108,10 +119,12 @@ body:has(#Contact:hover) #contact_box
     width: 50%;
     padding: 10px;
     height: 250px;
+    border: solid;
+    border-radius: 0px;
     background-color: #4cb6f3;
 }
 
-/* page_2/index.html */
+
 .code_section
 {
     width: 50%;

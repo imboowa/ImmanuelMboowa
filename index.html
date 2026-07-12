@@ -26,30 +26,89 @@
         <!-- Header Section -->
         <header id="for_the_header">
             <span style="padding: 20px;">Immanuel Mboowa</span>
-            <a><small id="About">About</small></a>
-            <a><small id="Computers">Computers</small></a>
         </header>
 
         <!-- Main section -->
-        <div class="container" id="container_1">
-            <!-- About Paragraph Section -->
-            <div class="box" id="about_box">
+        <div style="width: 100%; height: 40vh; display: flex;" id="widget_1">
+            <div style="background-color: #cdcdcd; width: 70%; position: relative;" id="about_box_1">
+                <div class="box" style="bottom: 0; position: absolute; right: 0; margin: 60px;">
+                    <h2>
+                        I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
+                        and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
+                        world. I aim to contribute to these fields.
+                    </h2>
+                </div>
+            </div>
+
+            <div style="background-color: white; width: 100%; border-radius: 10px; color: black; margin: 10px; padding: 10px; display: none; overflow: scroll;" id="sub_widget_1">
                 <h2>
-                    I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
-                    and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
-                    world. I aim to contribute to these fields of Computers.
+                        I am passionate about Computers and Art. I show my skills and passion through Computational Biology, Computer Graphics,
+                        and Computer Science Projects. I specialize in Python and C programming languages but seldom tap the Assembly
+                        world. I aim to contribute to these fields.
                 </h2>
             </div>
-            <!-- Computer Science Section -->
-            <div class="box" id="computer_box">
-                <h1>Computer Science</h1>
-                    <p><a href="index_2.html" class="link">Python</a></p>
-                    <p><a href="index_3.html" class="link">C</a></p>
-                    <p><a href="index_4.html" class="link">ARM Assembly</a></p>
-                <h1>Computer Graphics</h1>
-                    <p><a href="index_5.html" class="link">Blender</a></p>
+
+            <div style="background-color: #cdcdcd; width: 30%; position: relative;" id="widget_2">
+                <div class="box" style="position: absolute; margin: 80px;">Contact Me</div>
+                <div class="label" style="bottom: 0; position: absolute; left: 0; margin: 80px; width: 50%;">
+                    <p class="highlights">GitHub</p>
+                    <p class="highlights">LinkedIn</p>
+                </div>
             </div>
         </div>
+        <div style="width: 100%; height: 40vh; display: flex;">
+            <div style="background-color: #cdcdcd; width: 50%; position: relative;" id="widget_3">
+                <div class="box" style="top: 0; position: absolute; margin: 60px;">
+                    <h1>Computer Science</h1>
+                        <p style="font-size: .9rem;">I spend time on projects that involve computer software.</p>
+                    <h1>Computer Graphics</h1>
+                        <p style="font-size: .9rem;">I spend time learning <i>Blender</i> which involves making 3D artworks for my 3D artwork collection.</p>
+                </div>
+            </div>
+            <div style="background-color: #cdcdcd; width: 50%;" id="widget_4">
+                <div style="display: flex; padding: 30px; position: relative;">
+                    <div class="box" style="position: absolute; margin: 20px; top: 0;">Computer Science</div>
+                    <div class="label" style="margin: 30px; width: 50%;">
+                        <p class="highlights">Python</p>
+                        <p class="highlights">C</p>
+                        <p class="highlights">ARM Assembly</p>
+                    </div>
+                    <div class="box" style="position: absolute; margin: 50px; top: 0; right: 0;">Computer Graphics</div>
+                    <div class="label" style="height: 10%; width: 50%; margin: 50px;">
+                        <p class="highlights">Blender</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background-color: #cdcdcd; width: 100%; display: none;" id="sub_widget_2">
+                <div style="width: 50%;">
+                    <div style="text-align: center; background-color: blue; margin: 5px; padding: 10px; font-weight: bold; font-size: 1.5rem;">Computer Science</div>
+                    <div style="width: 100%; height: 100%; border-radius: 0px; margin: 5px;">
+                        <p class="highlights"><a href="index_2.html">Python</a></p>
+                        <p class="highlights"><a href="index_3.html">C</a></p>
+                        <p class="highlights"><a href="index_4.html">ARM Assembly</a></p>
+                    </div>
+                </div>
+                <div style="width: 50%;">
+                    <div style="text-align: center; background-color: blue; margin: 5px; padding: 10px; font-weight: bold; font-size: 1.5rem;">Computer Graphics</div>
+                    <div style="width: 100%; height: 100%; border-radius: 0px; margin: 5px;">
+                        <p class="highlights"><a href="index_5.html">Blender</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="background-color: #cdcdcd; width: 100%; padding: 10px; display: flex; justify-content: center;" id="parent_label_nav">
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 50px; height: 50px; top: 0;"></div>
+
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="https://github.com/imboowa" target="_blank">1</a></div>
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="https://www.linkedin.com/in/imboowa/" target="_blank">2</a></div>
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="index_2.html">3</a></div>
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="index_3.html">4</a></div>
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="index_4.html">5</a></div>
+            <div style="border-radius: 100px; background-color: #9ae3d0; width: 40px; height: 40px; margin: 10px; text-align: center;" class="label_nav link"><a href="index_5.html">6</a></div>
+        </div>
+
         <div class="container" id="container_2">
             <div style="background-color: #a1b4d4; width: 50%; margin-right: 5px;">
                 <div>
@@ -93,9 +152,9 @@
         </div>
 
         <div class="container" id="container_4">
-            <div style="display: block;">
+            <div style="display: flex;">
                 <div class="box" id="box_1">
-                    <h1>DNAGenre</h1>
+                    <h1 style="text-align: center;">DNAGenre</h1>
                     <p style="font-size: 1.5rem;">
                         DNAGenre is my simple bioinformatics app. It opens any kind of folder and allows the user to process valid files.
                     </p>
@@ -105,7 +164,7 @@
                     </span>
                 </div>
                 <div class="box" id="box_2">
-                    <h1>Decode</h1>
+                    <h1 style="text-align: center;">Decode</h1>
                     <p style="font-size: 1.5rem;">
                         This is my simple-mathematical-programming language that can perform some mathematical algorithms.
                     </p>
@@ -127,20 +186,40 @@
                     <span style="color: purple; margin-left: 10px;"><a href="https://sites.google.com/view/idedecode/idedecode_help">Read</a></span>
                 </span>
             </div>
-        </div>
-
-        <div style="background-color: #cccccc; display: flex;" id="Contact">
-            <small style="font-size: 2rem;">Contact</small>
-            <!-- About Section -->
-            <div class="box" id="contact_box">
-                <a href="https://github.com/imboowa" target="_blank" style="width: 50%;">Github</a>
-                <a href="https://www.linkedin.com/in/imboowa/" target="_blank" style="width: 50%;">LinkedIn</a>
+            <div style="display: flex;">
+                <div class="box" style="width: 50%; border-radius: 0px; border: solid; background-color: #4cb6f3;">
+                    <h1 style="text-align: center;">DecodeEditor</h1>
+                    <p style="font-size: 1.5rem;">
+                        This is the <b>Graphical User Interface</b> for <b>Decode</b>. It features opening a folder, writing code to a valid file, running that code, stopping
+                        infinite (running forever) code, stop code, and configure settings that user (you) wants. This code must always and strictly be <b>Decode</b> code.
+                    </p>
+                    <span>
+                        <span style="color: yellow; margin-right: 10px;"><a href="https://github.com/imboowa/DecodeEditor">View</a></span>
+                        <span style="color: purple; margin-left: 10px;"><a href="https://imboowa.github.io/DecodeEditor/">Read</a></span>
+                    </span>
+                </div>
+                <div class="box" style="width: 50%; border-radius: 0px; border: solid; background-color: #4cb6f3;">
+                    <h1 style="text-align: center;">MeloPress</h1>
+                    <p style="font-size: 1.5rem;">
+                        In my projects involving bioinformatics and simple computer science, this project taught me so much about ARM Assembly and low level computing
+                        thus I revere the knowledge gained and the project. This project gets a valid format DNA/RNA file and compresses it and decompresses it. It uses 2-bit
+                        compression and decompression on DNA/RNA files which results into drastic file size reduction.
+                    </p>
+                    <span>
+                        <span style="color: yellow; margin-right: 10px;"><a href="https://github.com/imboowa/MeloPress">View</a></span>
+                        <span style="color: purple; margin-left: 10px;"><a href="https://imboowa.github.io/MeloPress/">Read</a></span>
+                    </span>
+                </div>
             </div>
         </div>
 
+        <div style="text-align: center; padding: 10px;" id="sub_widget_3">Contact Me</div>
+        <div style="display: none; width: 100%; background-color: white;" id="sub_widget_4">
+            <div style="width: 50%; text-align: center; padding: 10px;"><a href="https://github.com/imboowa" target="_blank">GitHub</a></div>
+            <div style="width: 50%; text-align: center; padding: 10px;"><a href="https://www.linkedin.com/in/imboowa/" target="_blank">LinkedIn</a></div>
+        </div>
         <!-- Footer -->
         <footer id="for_the_footer">&copy; Immanuel Mboowa. All Rights Reserved.</footer>
-
         <script src="script.js"></script>
     </body>
 </html>

@@ -4,10 +4,11 @@ Welcome to my personal website. Below are links to works I have accomplished for
 
 ## Projects
 
-- **Python Projects**: a bioinformatics app called [DNAGenre](https://github.com/imboowa/DNAGenre), an IDE for Decode, and [simple utility scripts](https://github.com/imboowa/Python).
-- **C Projects**: Database project from Low Level Academy, [Tic Tac Toe game](https://github.com/imboowa/C/blob/main/home.c), made [Decode programming language](https://github.com/imboowa/Decode), and simple search and sorting algorithms.
-- **Assembly**: Shell, [Hello World](https://github.com/imboowa/Assembly/blob/main/main.s), and [Loops](https://github.com/imboowa/Assembly/blob/main/start.s).
-- **Major Projects**: [Blender scenes](https://github.com/imboowa/blendered); IDE for my programming language called Decode; personal website; simple projects in C, Python, and some Assembly; and Bioinformatics applications.
+- **Python Projects**: a bioinformatics app called [DNAGenre](https://github.com/imboowa/DNAGenre), and an IDE for [Decode](https://github.com/imboowa/DecodeEditor).
+- **C Projects**: Database project from Low Level Academy, and made [Decode programming language](https://github.com/imboowa/Decode).
+- **ARM Assembly Projects**: [2-bit Compressor and Decompressor for DNA/RNA files](https://github.com/imboowa/MeloPress).
+- **Blender Projects**: [desert donuts and an Apple lightning charger](https://imboowa.github.io/ImmanuelMboowa/index_5.html).
+- **Major Projects**: IDE for my programming language called DecodeEditor in Python; a personal website in HTML, CSS, JavaScript; programming language called Decode in C, 2-bit Compressor and Decompressor for DNA/RNA files in ARM Assembly.
 
 ## Live Website
 
